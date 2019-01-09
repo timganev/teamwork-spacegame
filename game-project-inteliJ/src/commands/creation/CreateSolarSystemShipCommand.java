@@ -37,7 +37,7 @@ public class CreateSolarSystemShipCommand implements Command {
         if (GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear() > 0) {
             Ship ship = factory.createSystemShipSolar(shipName, shipMass, crew);
             engine.getShip().add(ship);
-            return String.format("Solar ship with ID %d was created.", engine.getShip().size() - 1);
+            return String.format("Solar ship with ID %d was created.", engine.getShip().size());
         } else {
             return String.format("Can not created new ships after Extinction Level Event in year %d.", GameBoard.getYearExtinctionLevelEvent());
         }

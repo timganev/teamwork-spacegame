@@ -41,7 +41,7 @@ public class CreateColonialShipCommand implements Command {
             if (GameBoard.getYear() >= GameBoard.yearColonialShipCapability) {
                 Ship ship = factory.createColonialShip(propulsion, shipName, crew, shipMass);
                 engine.getShip().add(ship);
-                return String.format("ColonialShip with ID %d was created.", engine.getShip().size() - 1);
+                return String.format("ColonialShip with ID %d was created.", engine.getShip().size());
             } else {
                 return String.format("Can not created ColonialShip before develop  Colonial Ship Capability in year %d.", GameBoard.yearColonialShipCapability);
             }

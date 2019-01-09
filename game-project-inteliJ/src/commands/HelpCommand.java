@@ -46,7 +46,7 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "11 createsystemshipsolar  (example: createsystemshipsolar Apolo9 75000 true)" +
                         System.lineSeparator() +
-                        "9 send  (example: send 0 3)" +
+                        "11 send  (example: send 0 3)" +
                         System.lineSeparator() +
                         "***********" +
                         System.lineSeparator());

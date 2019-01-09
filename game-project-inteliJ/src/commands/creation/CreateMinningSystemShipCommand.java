@@ -37,7 +37,7 @@ public class CreateMinningSystemShipCommand implements Command {
         if (GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear() > 0) {
             Ship ship = factory.createSystemShipMinning(shipName, shipMass, crew);
             engine.getShip().add(ship);
-            return String.format("Minning ship with ID %d was created.", engine.getShip().size() - 1);
+            return String.format("Minning ship with ID %d was created.", engine.getShip().size());
         } else {
             return String.format("Can not created new ships after Extinction Level Event in year %d.", GameBoard.getYearExtinctionLevelEvent());
         }
