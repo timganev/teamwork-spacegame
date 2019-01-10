@@ -13,5 +13,9 @@ public interface SpaceObject {
 
     double getDistanceLightYears();
 
+//    int getObjectID();
+//
+//    void setObjectID(int objectID);
+
 }
 

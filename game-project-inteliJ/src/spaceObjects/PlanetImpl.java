@@ -18,7 +18,7 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
         setRadiusEarthR(radiusEarthR);
         setTempC(tempC);
         setPeriodDays(periodDays);
-        setPopulation(population);
+//        setPopulation(population);
     }
 
 

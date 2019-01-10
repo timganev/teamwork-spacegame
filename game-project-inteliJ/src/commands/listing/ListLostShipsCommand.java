@@ -13,6 +13,7 @@ public class ListLostShipsCommand implements Command {
 
     private final Factory factory;
     private final Engine engine;
+    List<String> listLostShips = new ArrayList<>();
 
     public ListLostShipsCommand(Factory factory, Engine engine) {
         this.factory = factory;
@@ -33,5 +34,9 @@ public class ListLostShipsCommand implements Command {
         }
 
         return String.join( System.lineSeparator(), listLostShips).trim();
+    }
+
+    public List<String> getListLostShips() {
+        return listLostShips;
     }
 }

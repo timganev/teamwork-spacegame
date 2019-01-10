@@ -12,4 +12,6 @@ public interface Planet extends SpaceObject {
 
     int getPopulation();
 
+    void setPopulation(int population);
+
 }

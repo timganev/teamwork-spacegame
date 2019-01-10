@@ -1,7 +1,6 @@
 package spaceObjects;
 
 
-
 import spaceObjects.contracts.SpaceObject;
 import enums.HostStarType;
 
@@ -11,12 +10,22 @@ public abstract class SpaceObjectBase implements SpaceObject {
     private String hostStarName;
     private HostStarType hostStarType;
     private double distanceLightYears;
+    private int objectID = 0;
+
+//    @Override
+//    public int getObjectID() {
+//        return objectID;
+//    }
 
     public SpaceObjectBase(String objectName, String hostStarName, HostStarType hostStarType, double distanceLightYears) {
         setObjectName(objectName);
         setHostStarName(hostStarName);
         setHostStarType(hostStarType);
         setDistanceLightYears(distanceLightYears);
+    }
+
+    public void setObjectID(int objectID) {
+        this.objectID = objectID;
     }
 
     @Override
@@ -75,7 +84,7 @@ public abstract class SpaceObjectBase implements SpaceObject {
                         "Host Star Name: %s" + System.lineSeparator() +
                         "Host Star type: %s" + System.lineSeparator() +
                         "Distance: %.2f light-years from Earth" + System.lineSeparator(),
-                        getObjectName(), getHostStarName(), getHostStarType(), getDistanceLightYears());
+                getObjectName(), getHostStarName(), getHostStarType(), getDistanceLightYears());
     }
 
     public String print() {

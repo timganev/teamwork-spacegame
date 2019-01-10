@@ -1,5 +1,7 @@
 package ships;
 
+import commands.creation.LostShipCommand;
+import commands.listing.ListLostShipsCommand;
 import constants.Constants;
 import ships.shipContracts.Ship;
 
@@ -10,6 +12,7 @@ public abstract class ShipBase implements Ship {
     private int currID = shipId + 1;
     private int turnsToDestination;
     private int destination;
+    private ListLostShipsCommand listLostShipsCommand;
 
     public ShipBase(String shipName, double shipMass) {
         shipId++;
@@ -82,7 +85,7 @@ public abstract class ShipBase implements Ship {
                         "Ship mass: %.2f " + System.lineSeparator() +
                         "Years to destination %d" + System.lineSeparator() +
                         "Destination ID %d" + System.lineSeparator(),
-                getType(), getShipName(), this.currID, getShipMass(), getTurnsToDestination(), getDestination()
+                getType(), getShipName(), this.currID - listLostShipsCommand.getListLostShips().size(), getShipMass(), getTurnsToDestination(), getDestination()
         );
     }
 

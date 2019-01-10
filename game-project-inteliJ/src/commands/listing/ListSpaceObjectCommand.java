@@ -20,14 +20,16 @@ public class ListSpaceObjectCommand implements Command {
 
     public String execute(List<String> parameters) {
 
-        List<SpaceObject> celestialBodies = engine.getSpaceObject();
-        if (celestialBodies.size() == 0) {
+
+        if (engine.getSpaceObject().size() == 0) {
             return "There are no known space objects.";
         }
 
         List<String> listCelestialBodies = new ArrayList<>();
-        for (SpaceObject celestialBody : celestialBodies) {
-            listCelestialBodies.add(celestialBody.toString());
+        for (SpaceObject spaceObject : engine.getSpaceObject()) {
+            listCelestialBodies.add(
+                    String.format("Object ID: %d" + System.lineSeparator(),engine.getSpaceObject().indexOf(spaceObject)) +
+                    spaceObject.toString());
         }
 
         return String.join( System.lineSeparator(), listCelestialBodies).trim();

@@ -38,7 +38,7 @@ public class LostShipCommand implements Command {
 
         Ship ship = factory.createLostShip(shipName, shipMass);
         engine.getShip().set(shipId, ship);
-        return String.format("Ship with ID %d was lost."+System.lineSeparator(), shipId + 1);
+        return String.format("Ship with ID %d was lost."+System.lineSeparator(), shipId);
 
 
 
