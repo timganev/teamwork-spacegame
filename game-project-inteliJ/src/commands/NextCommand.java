@@ -61,28 +61,6 @@ public class NextCommand implements Command {
         }
     }
 
-    private String printReport() {
-        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
-
-        String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
-        yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
-        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
-        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
-
-        return String.format(
-                "Year: %d" + System.lineSeparator() +
-                        numberOfyearsBeforeAfter + System.lineSeparator() +
-                        "Known Space Objects   : %d" + System.lineSeparator() +
-                        "Total Population      : %d " + System.lineSeparator() +
-                        "**************************" + System.lineSeparator() +
-                        "Total number of ships : %d " + System.lineSeparator() +
-                        "   Active ships       : %d " + System.lineSeparator() +
-                        "   Lost ships         : %d " + System.lineSeparator() +
-                        "**************************" + System.lineSeparator(),
-                GameBoard.getYear(), engine.getSpaceObject().size(), totalPopulation, engine.getShip().size(), engine.getShip().size()-LostShips(), LostShips());
-    }
-
-
     private int LostShips() {
         int counterLostShip = 0;
         for (Ship ship : engine.getShip()) {
@@ -92,6 +70,30 @@ public class NextCommand implements Command {
         }
         return counterLostShip;
     }
+
+    private String printReport() {
+        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+
+        String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
+        yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
+        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
+        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
+
+        return String.format(
+                        "Year: %d" + System.lineSeparator() +
+                        numberOfyearsBeforeAfter + System.lineSeparator() +
+                        "Known Space Objects   : %d" + System.lineSeparator() +
+                        "Total Population      : %d " + System.lineSeparator() +
+                        "**************************" + System.lineSeparator() +
+                        "Total number of ships : %d " + System.lineSeparator() +
+                        "   Active ships       : %d " + System.lineSeparator() +
+                        "   Lost ships         : %d " + System.lineSeparator() +
+                        "**************************" + System.lineSeparator(),
+                GameBoard.getYear(), engine.getSpaceObject().size(), totalPopulation, engine.getShip().size(), engine.getShip().size() - LostShips(), LostShips());
+    }
+
+
+
 
 }
 

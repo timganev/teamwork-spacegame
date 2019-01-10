@@ -23,7 +23,7 @@ public class CreateUniverseCommand implements Command {
 
     public String execute(List<String> parameters) {
         if (GameBoard.loadCounter>0) {
-            return String.format("Known universe was already loaded.");
+            return String.format("Known universe was already loaded."+System.lineSeparator());
         } else {
             GameBoard.loadCounter++;
             Planet earth = factory.createPlanet("Earth", "Sol", "yellow", 0, 1, 1, 15, 365.4);
@@ -42,7 +42,7 @@ public class CreateUniverseCommand implements Command {
 
 //            engine.getSpaceObject().set(0, (Planet) earth.setPopulation(60000000)   );  //earth.setPopulation(60000000)
 
-            return String.format("Known universe was loaded.");
+            return String.format("Known universe was loaded."+System.lineSeparator());
         }
     }
 
