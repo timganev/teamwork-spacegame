@@ -1,25 +1,24 @@
 package spaceObjects;
 
-import constants.Constants;
 import spaceObjects.contracts.Planet;
 import enums.HostStarType;
 //import celestial.HostStarType;
 
 public class PlanetImpl extends SpaceObjectBase implements Planet {
-    private final static String CLASS_NAME_PRINT = "Planet :";
+    private final static String CLASS_NAME_PRINT = "Planet";
     private double massEarthM;
     private double radiusEarthR;
     private double tempC;
     private double periodDays;
-    private int population;
+    private int population = 0;
 
-    public PlanetImpl(String objectName, String hostStarName, HostStarType hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays, int population) {
+    public PlanetImpl(String objectName, String hostStarName, HostStarType hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays) {
         super(objectName, hostStarName, hostStarType, distanceLightYears);
         setMassEarthM(massEarthM);
         setRadiusEarthR(radiusEarthR);
         setTempC(tempC);
         setPeriodDays(periodDays);
-        this.population = population;
+        setPopulation(population);
     }
 
 
@@ -56,21 +55,21 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
 
 
     private void setMassEarthM(double massEarthM) {
-        if (massEarthM < 0 || massEarthM > Constants.MAX_FRACTION_OF_EARTH_MASS) {
+        if (massEarthM < 0 || massEarthM > 5) {
             throw new IllegalArgumentException("Object mass can not be negative");
         }
-        this.massEarthM = massEarthM * Constants.EARTH_MASS;
+        this.massEarthM = massEarthM * 5.9736;
     }
 
     private void setRadiusEarthR(double radiusEarthR) {
-        if (radiusEarthR < 0 || radiusEarthR > Constants.MAX_FRACTION_OF_EARTH_RADIUS) {
+        if (radiusEarthR < 0 || radiusEarthR > 10) {
             throw new IllegalArgumentException("Object radius can not be negative or more then 10");
         }
-        this.radiusEarthR = radiusEarthR * Constants.EARTH_RADIUS;
+        this.radiusEarthR = radiusEarthR * 6378.135;
     }
 
     private void setTempC(double tempC) {
-        if (tempC < Constants.MIN_TEMPERATURE_FOR_LIFE || tempC > Constants.MAX_TEMPERATURE_FOR_LIFE) {
+        if (tempC < -100 || tempC > 60) {
             throw new IllegalArgumentException("Object temperature can not be less then -100 or more then 50");
         }
         this.tempC = tempC;
@@ -83,9 +82,10 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
         this.periodDays = periodDays;
     }
 
-    private void setPopulation(int population) {
-        this.population += population;
+    public void setPopulation(int population) {
+        this.population = population;
     }
+
 
 
 

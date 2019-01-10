@@ -6,7 +6,7 @@ import ships.shipContracts.Ship;
 public abstract class ShipBase implements Ship {
     private static int shipId = 0;
     protected String shipName;
-    private double shipMass;
+    protected double shipMass;
     private int currID = shipId + 1;
     private int turnsToDestination;
     private int destination;
@@ -45,7 +45,7 @@ public abstract class ShipBase implements Ship {
     }
 
     public void setTurnsToDestination(int turnsToDestination) {
-        if (shipMass < 0) {
+        if (turnsToDestination < 0) {
             throw new IllegalArgumentException("Ship mass should be zero or more");
         }
         this.turnsToDestination = turnsToDestination;
@@ -62,12 +62,10 @@ public abstract class ShipBase implements Ship {
     }
 
     public void setShipMass(double shipMass) {
-        if (shipMass < Constants.MIN_SHIP_MASS) {
             if (shipMass < Constants.MIN_SHIP_MASS) {
                 throw new IllegalArgumentException("Ship mass should be more than 5000");
             }
             this.shipMass = shipMass;
-        }
     }
 
     public abstract String getType();

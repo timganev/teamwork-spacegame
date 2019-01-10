@@ -35,7 +35,7 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "6 createplanet        (example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 11 1115555)" +
                         System.lineSeparator() +
-                        "7 createcolonialship  (example: createcolonialship Sail Dominator 3000 100000)" +
+                        "7 createcolonialship  (example: createcolonialship Sail Ark 3000 100000)" +
                         System.lineSeparator() +
                         "8 createstarshiprobe  (example: createstarshiprobe Sail Dominator 100000)" +
                         System.lineSeparator() +
@@ -46,6 +46,16 @@ public class HelpCommand implements Command {
                         "11 createsystemshipsolar  (example: createsystemshipsolar Apolo9 75000 true)" +
                         System.lineSeparator() +
                         "11 send  (example: send 0 3)" +
+                        System.lineSeparator() +
+                        "11 lostship  (example: lostship 1)" +
+                        System.lineSeparator() +
+                        "12 exit"   +
+                        System.lineSeparator() +
+
+                        "listactiveships  TODO"   +
+                        System.lineSeparator() +
+
+                        "listlostships  TODO"   +
                         System.lineSeparator() +
                         "***********" +
                         System.lineSeparator());

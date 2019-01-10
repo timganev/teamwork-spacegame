@@ -42,7 +42,7 @@ public class CreatePlanetCommand implements Command {
             throw new IllegalArgumentException("Failed to parse CreatePlanet command parameters.");
         }
 
-        Planet planet = factory.createPlanet(objectName, hostStarName, hostStarType, distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays, population);
+        Planet planet = factory.createPlanet(objectName, hostStarName, hostStarType, distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays);
         engine.getSpaceObject().add(planet);
 
 

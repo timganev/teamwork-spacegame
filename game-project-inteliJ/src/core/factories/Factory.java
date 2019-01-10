@@ -10,7 +10,7 @@ import spaceObjects.contracts.Planet;
 public interface Factory {
 
 
-    Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays, int population);
+    Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays);
 
     AsteroidField createAsteroidField(String objectName, String hostStarName, String hostStarType, double distanceLightYears, boolean hasMetals, boolean hasRareEarthMinerals);
 
@@ -24,5 +24,6 @@ public interface Factory {
 
     SystemShipSolar createSystemShipSolar(String shipName, double shipMass, boolean crew);
 
-    LostShipImpl createLostProbe(String shipName, int destination);
+    LostShip createLostShip(String shipName, double shipMass);
+
 }

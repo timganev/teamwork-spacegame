@@ -26,19 +26,21 @@ public class CreateUniverseCommand implements Command {
             return String.format("Known universe was already loaded.");
         } else {
             GameBoard.loadCounter++;
-            Planet earth = factory.createPlanet("Earth", "Sol", "yellow", 0, 1, 1, 15, 365.4, 6000000);
-            Planet alfab = factory.createPlanet("AlfaB", "Alfa", "blue", 4, 0.9, 1.1, -25, 101, 0);
+            Planet earth = factory.createPlanet("Earth", "Sol", "yellow", 0, 1, 1, 15, 365.4);
+            Planet alfab = factory.createPlanet("AlfaB", "Alfa", "blue", 4, 0.9, 1.1, -25, 101);
 
             AsteroidField solBelt = factory.createAsteroidField("Belt", "Sol", "yellow", 0, true, true);
             AsteroidField alfaBelt = factory.createAsteroidField("alfaBelt", "Alfa", "blue", 4, true, true);
 
-            Ship ship = factory.createStarShipProbe("SAIL", "Dominator", 100000);
+            Ship ship = factory.createStarShipProbe("Sail", "EventHorizon", 100000);
             engine.getShip().add(ship);
 
             engine.getSpaceObject().add(earth);
             engine.getSpaceObject().add(alfab);
             engine.getSpaceObject().add(solBelt);
             engine.getSpaceObject().add(alfaBelt);
+
+//            engine.getSpaceObject().set(0, (Planet) earth.setPopulation(60000000)   );  //earth.setPopulation(60000000)
 
             return String.format("Known universe was loaded.");
         }

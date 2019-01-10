@@ -18,8 +18,8 @@ public class FactoryImpl implements Factory {
     }
 
     @Override
-    public Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays, int population) {
-        return new PlanetImpl(objectName, hostStarName, getHostStarType(hostStarType), distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays, population);
+    public Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays) {
+        return new PlanetImpl(objectName, hostStarName, getHostStarType(hostStarType), distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays);
     }
 
     @Override
@@ -32,8 +32,8 @@ public class FactoryImpl implements Factory {
         return new StarShipColonialImpl(getPropulsionType(propulsion), shipName, crew, shipMass);
     }
 
-    public LostShipImpl createLostProbe(String shipName, int destination) {
-        return new LostShipImpl(shipName, destination);
+    public LostShipImpl createLostShip(String shipName, double shipMass) {
+        return new LostShipImpl(shipName, shipMass);
     }
 
     @Override

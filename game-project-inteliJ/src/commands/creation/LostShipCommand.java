@@ -3,7 +3,7 @@ package commands.creation;
 
 import commands.contracts.Command;
 import core.GameBoard;
-import core.contracts.Engine;
+import core.contracts.Engine;;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
 
@@ -22,7 +22,8 @@ public class LostShipCommand implements Command {
 
         int shipId;
         String shipName;
-        int destination;
+        int yearLostShip;
+        double shipMass;
 
         try {
             shipId = Integer.parseInt(parameters.get(0));
@@ -32,17 +33,14 @@ public class LostShipCommand implements Command {
         }
 
         shipName = engine.getShip().get(shipId).getShipName();
-        destination = engine.getShip().get(shipId).getDestination();
 
-        if ( GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear() > 0) {
+        shipMass = engine.getShip().get(shipId).getShipMass();
 
-            Ship ship = factory.createLostProbe(shipName, destination);
-            engine.getShip().add(ship);
-//            engine.getShip().get(shipId) = ship;
-            return String.format("StarShipProbe with ID %d was created.", engine.getShip().size() - 1);
-        } else {
-            return String.format("Can not created new ships after Extinction Level Event in year %d.", GameBoard.getYearExtinctionLevelEvent());
-        }
+        Ship ship = factory.createLostShip(shipName, shipMass);
+        engine.getShip().set(shipId, ship);
+        return String.format("Ship with ID %d was lost.", shipId);
+
+
 
 
     }

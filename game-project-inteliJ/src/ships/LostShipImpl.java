@@ -2,27 +2,30 @@ package ships;
 
 import core.GameBoard;
 import enums.PropulsionType;
+import ships.shipContracts.LostShip;
 
 
-public class LostShipImpl extends ShipBase {
+public class LostShipImpl extends ShipBase implements LostShip {
 
 
     private int yearLostShip;
 
-    public LostShipImpl(String shipName, int destination) {
-        super(shipName, destination);
+
+    public LostShipImpl(String shipName, double shipMass) {
+        super(shipName, shipMass);
         this.yearLostShip = GameBoard.getYear();
-    }
-
-
-    public int getYearLostShip() {
-        return yearLostShip;
     }
 
     @Override
     public void setShipName(String shipName) {
-        super.shipName = "Lost Ship" + getShipId();
+        super.shipName = shipName;
     }
+
+
+    public LostShipImpl(int yearLostShip) {
+        this.yearLostShip = yearLostShip;
+    }
+
 
     @Override
     public double getShipSpeed() {
@@ -40,10 +43,17 @@ public class LostShipImpl extends ShipBase {
     @Override
     public void next(int years) {}
 
+
     @Override
     public String toString() {
-        return String.format(super.toString() +
-                "Lost in year:  %d" + System.lineSeparator(),getYearLostShip());
+        return String.format(
+                "Ship type: %s " + System.lineSeparator() +
+                        "Ship name: %s" + System.lineSeparator() +
+                        "Lost in year:  %d" + System.lineSeparator(), getType(), getShipName(),getYearLostShip());
     }
 
+    @Override
+    public int getYearLostShip() {
+        return yearLostShip;
+    }
 }

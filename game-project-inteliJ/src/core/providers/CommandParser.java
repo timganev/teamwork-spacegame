@@ -80,6 +80,9 @@ public class CommandParser implements Parser {
             case "load":
                 return new CreateUniverseCommand(factory, engine);
 
+            case "lostship":
+                return new LostShipCommand(factory, engine);
+
         }
         throw new IllegalArgumentException(String.format(INVALID_COMMAND, commandName));
     }
