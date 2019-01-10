@@ -12,9 +12,9 @@ import spaceObjects.contracts.Planet;
 import enums.HostStarType;
 
 
-public class AgencyFactoryImpl implements AgencyFactory {
+public class FactoryImpl implements Factory {
 
-    public AgencyFactoryImpl() {
+    public FactoryImpl() {
     }
 
     @Override

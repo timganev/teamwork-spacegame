@@ -7,7 +7,7 @@ import spaceObjects.contracts.AsteroidField;
 import spaceObjects.contracts.Planet;
 
 
-public interface AgencyFactory {
+public interface Factory {
 
 
     Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays, int population);

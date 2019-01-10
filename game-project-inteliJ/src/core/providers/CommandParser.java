@@ -8,7 +8,7 @@ import commands.creation.*;
 import commands.listing.*;
 import core.contracts.Engine;
 import core.contracts.Parser;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,10 +16,10 @@ import java.util.List;
 public class CommandParser implements Parser {
     private static final String INVALID_COMMAND = "Invalid command name: %s!";
 
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public CommandParser(AgencyFactory factory, Engine engine) {
+    public CommandParser(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }

@@ -3,16 +3,16 @@ package commands.creation;
 //import celestial.enums.HostStarType;
 import commands.contracts.Command;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 import spaceObjects.contracts.Planet;
 
 import java.util.List;
 
 public class CreatePlanetCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public CreatePlanetCommand(AgencyFactory factory, Engine engine) {
+    public CreatePlanetCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }

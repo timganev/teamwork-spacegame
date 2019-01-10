@@ -4,7 +4,7 @@ import ships.shipContracts.Ship;
 import spaceObjects.contracts.SpaceObject;
 import commands.contracts.Command;
 import core.contracts.*;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 import core.providers.*;
 
 
@@ -21,7 +21,7 @@ public class EngineImpl implements Engine {
     private final List<SpaceObject> spaceObjects;
     private final List<Ship> ships;
 
-    public EngineImpl(AgencyFactory factory) {
+    public EngineImpl(Factory factory) {
         reader = new ConsoleReader();
         writer = new ConsoleWriter();
         parser = new CommandParser(factory, this);

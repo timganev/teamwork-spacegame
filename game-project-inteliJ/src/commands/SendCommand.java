@@ -1,23 +1,18 @@
 package commands;
 
 import commands.contracts.Command;
-import core.GameBoard;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 import ships.StarShipBase;
-import ships.StarShipProbeImpl;
-import ships.shipContracts.StarShipColonial;
-import spaceObjects.contracts.Planet;
-import spaceObjects.contracts.SpaceObject;
 
 import java.util.List;
 
 
 public class SendCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public SendCommand(AgencyFactory factory, Engine engine) {
+    public SendCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
 

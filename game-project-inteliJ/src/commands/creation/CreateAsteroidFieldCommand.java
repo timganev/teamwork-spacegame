@@ -4,15 +4,15 @@ package commands.creation;
 import spaceObjects.contracts.AsteroidField;
 import commands.contracts.Command;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 
 import java.util.List;
 
 public class CreateAsteroidFieldCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public CreateAsteroidFieldCommand(AgencyFactory factory, Engine engine) {
+    public CreateAsteroidFieldCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }
@@ -40,7 +40,7 @@ public class CreateAsteroidFieldCommand implements Command {
 
         AsteroidField asteroidField = factory.createAsteroidField(objectName, hostStarName, hostStarType, distanceLightYears, hasMetals, hasRareEarthMinerals);
         engine.getSpaceObject().add(asteroidField);
-        
+
 
         return String.format("AsteroidField with ID %d was created.", engine.getSpaceObject().size());
     }

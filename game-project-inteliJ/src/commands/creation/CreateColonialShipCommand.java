@@ -1,20 +1,19 @@
 package commands.creation;
 
 
-import commands.NextCommand;
 import commands.contracts.Command;
 import core.GameBoard;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 import ships.shipContracts.Ship;
 
 import java.util.List;
 
 public class CreateColonialShipCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public CreateColonialShipCommand(AgencyFactory factory, Engine engine) {
+    public CreateColonialShipCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }

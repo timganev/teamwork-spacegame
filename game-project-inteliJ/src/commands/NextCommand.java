@@ -3,10 +3,9 @@ package commands;
 import commands.contracts.Command;
 import core.GameBoard;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 import ships.ShipBase;
 import ships.shipContracts.Ship;
-import spaceObjects.contracts.AsteroidField;
 import spaceObjects.contracts.Planet;
 import spaceObjects.contracts.SpaceObject;
 
@@ -14,10 +13,10 @@ import java.util.List;
 
 
 public class NextCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public NextCommand(AgencyFactory factory, Engine engine) {
+    public NextCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }

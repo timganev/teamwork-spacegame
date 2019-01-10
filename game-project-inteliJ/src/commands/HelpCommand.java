@@ -2,17 +2,16 @@ package commands;
 
 import commands.contracts.Command;
 import core.contracts.Engine;
-import core.factories.AgencyFactory;
+import core.factories.Factory;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
 
 
 public class HelpCommand implements Command {
-    private final AgencyFactory factory;
+    private final Factory factory;
     private final Engine engine;
 
-    public HelpCommand(AgencyFactory factory, Engine engine) {
+    public HelpCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
 
