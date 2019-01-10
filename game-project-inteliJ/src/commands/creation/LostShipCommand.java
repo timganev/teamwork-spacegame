@@ -35,10 +35,11 @@ public class LostShipCommand implements Command {
         shipName = engine.getShip().get(shipId).getShipName();
 
         shipMass = engine.getShip().get(shipId).getShipMass();
+         int shipIdtoarrId = shipId + 1;
 
         Ship ship = factory.createLostShip(shipName, shipMass);
         engine.getShip().set(shipId, ship);
-        return String.format("Ship with ID %d was lost.", shipId + 1);
+        return String.format("Ship with ID %d was lost.", shipIdtoarrId);
 
 
 
