@@ -3,7 +3,7 @@ package commands.creation;
 //import celestial.enums.HostStarType;
 
 import commands.contracts.Command;
-import core.GameBoard;
+import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;

@@ -1,14 +1,9 @@
 package commands;
 
 import commands.contracts.Command;
-import core.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.StarShipBase;
-import ships.StarShipProbeImpl;
-import ships.shipContracts.StarShipColonial;
-import spaceObjects.contracts.Planet;
-import spaceObjects.contracts.SpaceObject;
 
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package ships;
 
-import core.GameBoard;
-import enums.PropulsionType;
+import constants.GameBoard;
 import ships.shipContracts.LostShip;
 
 

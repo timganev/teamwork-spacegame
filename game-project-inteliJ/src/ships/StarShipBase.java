@@ -3,7 +3,6 @@ package ships;
 import constants.Constants;
 import enums.PropulsionType;
 import ships.shipContracts.StarShip;
-import static core.GameBoard.lightSpeed;
 
 public abstract class StarShipBase extends ShipBase implements StarShip {
 

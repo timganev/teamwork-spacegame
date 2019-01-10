@@ -1,5 +1,6 @@
 package core;
 
+import constants.GameBoard;
 import ships.shipContracts.Ship;
 import spaceObjects.contracts.SpaceObject;
 import commands.contracts.Command;

@@ -1,4 +1,4 @@
-package core;
+package constants;
 
 
 public class GameBoard {

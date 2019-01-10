@@ -1,7 +1,7 @@
 
 
 import core.EngineImpl;
-import core.GameBoard;
+import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import core.factories.FactoryImpl;

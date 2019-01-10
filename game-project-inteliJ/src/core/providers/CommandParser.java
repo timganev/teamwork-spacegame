@@ -3,7 +3,6 @@ package core.providers;
 import commands.HelpCommand;
 import commands.NextCommand;
 import commands.SendCommand;
-import commands.TestCommand;
 import commands.contracts.Command;
 import commands.creation.*;
 import commands.listing.*;
@@ -86,9 +85,6 @@ public class CommandParser implements Parser {
 
             case "listlostships":
                 return new ListLostShipsCommand(factory, engine);
-
-            case "test":
-                return new TestCommand(factory, engine);
 
             case "listactiveships":
                 return new ListActiveShips(factory, engine);

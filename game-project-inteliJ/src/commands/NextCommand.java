@@ -1,7 +1,7 @@
 package commands;
 
 import commands.contracts.Command;
-import core.GameBoard;
+import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.ShipBase;
@@ -33,12 +33,15 @@ public class NextCommand implements Command {
 
         try {
             jumpYears = Integer.parseInt(parameters.get(0));
-            GameBoard.year+=this.jumpYears ;
-            updateResourceWithYear();
         } catch (Exception e) {
-            GameBoard.year++;
+            jumpYears = 1;
         }
 
+        if (jumpYears < 1) {
+            jumpYears = 1;
+        }
+
+        GameBoard.year += this.jumpYears;
 
         updateTurnsToDestination();
 
@@ -55,6 +58,7 @@ public class NextCommand implements Command {
             ship.next();
         }
     }
+
     private void updateResourceWithYear() {
         for (Ship ship : engine.getShip()) {
             ship.next(this.jumpYears);
