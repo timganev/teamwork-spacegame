@@ -45,13 +45,15 @@ public class EngineImpl implements Engine {
         while (true) {
             try {
                 String commandAsString = reader.readLine();
-                if (commandAsString.equalsIgnoreCase(TERMINATION_COMMAND)) {
+                if (commandAsString.equalsIgnoreCase(TERMINATION_COMMAND) || GameBoard.getYear()>= GameBoard.getYearEndGame()) {
+                    System.out.println("The end");
                     break;
                 }
                 processCommand(commandAsString);
             } catch (Exception ex) {
                 writer.writeLine(ex.getMessage() != null && !ex.getMessage().isEmpty() ? ex.getMessage() : ex.toString());
                 //writer.writeLine("####################");
+
             }
         }
     }
