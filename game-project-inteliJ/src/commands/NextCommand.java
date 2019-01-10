@@ -5,6 +5,7 @@ import core.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.ShipBase;
+import ships.shipContracts.LostShip;
 import ships.shipContracts.Ship;
 import spaceObjects.contracts.AsteroidField;
 import spaceObjects.contracts.Planet;
@@ -23,10 +24,13 @@ public class NextCommand implements Command {
 
     }
 
+
     private int totalPopulation = 0;
-    private int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
 
     public String execute(List<String> parameters) {
+//        int totalShips = engine.getShip().size();
+//        int activeShips = totalShips - LostShips();
+
         GameBoard.year++;
 
         updateShips();
@@ -48,6 +52,7 @@ public class NextCommand implements Command {
     }
 
     private void updateSpaceObjects() {
+
         for (SpaceObject spaceObject : engine.getSpaceObject()) {
             if (spaceObject instanceof Planet) {
                 totalPopulation = totalPopulation + ((Planet) spaceObject).getPopulation();
@@ -57,6 +62,8 @@ public class NextCommand implements Command {
     }
 
     private String printReport() {
+        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+
         String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
         yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
         String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
@@ -65,13 +72,26 @@ public class NextCommand implements Command {
         return String.format(
                 "Year: %d" + System.lineSeparator() +
                         numberOfyearsBeforeAfter + System.lineSeparator() +
-                        "Known Space Objects : %d" + System.lineSeparator() +
-                        "Total Population  : %d " + System.lineSeparator() +
+                        "Known Space Objects   : %d" + System.lineSeparator() +
+                        "Total Population      : %d " + System.lineSeparator() +
+                        "**************************" + System.lineSeparator() +
                         "Total number of ships : %d " + System.lineSeparator() +
-                        "********************",
-                GameBoard.getYear(), engine.getSpaceObject().size(), totalPopulation, engine.getShip().size());
+                        "   Active ships       : %d " + System.lineSeparator() +
+                        "   Lost ships         : %d " + System.lineSeparator() +
+                        "**************************" + System.lineSeparator(),
+                GameBoard.getYear(), engine.getSpaceObject().size(), totalPopulation, engine.getShip().size(), engine.getShip().size()-LostShips(), LostShips());
     }
 
+
+    private int LostShips() {
+        int counterLostShip = 0;
+        for (Ship ship : engine.getShip()) {
+            if (ship instanceof LostShip) {
+                counterLostShip++;
+            }
+        }
+        return counterLostShip;
+    }
 
 }
 
