@@ -39,7 +39,7 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "8 createstarshiprobe  (example: createstarshiprobe Sail Dominator 100000)" +
                         System.lineSeparator() +
-                        "9 createsystemshipguardian  (example: createsystemshipguardian Rocket true 75000)" +
+                        "9 createsystemshipguardian  (example: createsystemshipguardian Rocket 75000 true )" +
                         System.lineSeparator() +
                         "10 createsystemshipminning  (example: createsystemshipminning Apolo11 75000 true)" +
                         System.lineSeparator() +
@@ -51,11 +51,9 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "12 exit"   +
                         System.lineSeparator() +
-
-                        "listactiveships  TODO"   +
+                        "13 listactiveships"   +
                         System.lineSeparator() +
-
-                        "listlostships  TODO"   +
+                        "14 listlostships"   +
                         System.lineSeparator() +
                         "***********" +
                         System.lineSeparator());

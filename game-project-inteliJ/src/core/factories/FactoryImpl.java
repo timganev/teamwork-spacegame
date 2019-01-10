@@ -32,7 +32,7 @@ public class FactoryImpl implements Factory {
         return new StarShipColonialImpl(getPropulsionType(propulsion), shipName, crew, shipMass);
     }
 
-    public LostShipImpl createLostShip(String shipName, double shipMass) {
+    public LostShip createLostShip(String shipName, double shipMass) {
         return new LostShipImpl(shipName, shipMass);
     }
 
@@ -55,7 +55,6 @@ public class FactoryImpl implements Factory {
     public SystemShipSolar createSystemShipSolar(String shipName, double shipMass, boolean crew) {
         return new SystemShipSolarImpl(shipName, shipMass, crew);
     }
-
 
 
     private HostStarType getHostStarType(String hostStarType) {

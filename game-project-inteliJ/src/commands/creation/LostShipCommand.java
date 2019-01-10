@@ -26,7 +26,7 @@ public class LostShipCommand implements Command {
         double shipMass;
 
         try {
-            shipId = Integer.parseInt(parameters.get(0));
+            shipId = Integer.parseInt(parameters.get(0)) - 1;
 
         } catch (Exception e) {
             throw new IllegalArgumentException("Failed to parse LostShip command parameters.");
@@ -38,7 +38,7 @@ public class LostShipCommand implements Command {
 
         Ship ship = factory.createLostShip(shipName, shipMass);
         engine.getShip().set(shipId, ship);
-        return String.format("Ship with ID %d was lost.", shipId);
+        return String.format("Ship with ID %d was lost.", shipId + 1);
 
 
 

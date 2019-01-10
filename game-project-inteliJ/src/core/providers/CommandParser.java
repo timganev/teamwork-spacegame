@@ -83,6 +83,12 @@ public class CommandParser implements Parser {
             case "lostship":
                 return new LostShipCommand(factory, engine);
 
+            case "listlostships":
+                return new ListLostShipsCommand(factory, engine);
+
+            case "listactiveships":
+                return new ListActiveShips(factory, engine);
+
         }
         throw new IllegalArgumentException(String.format(INVALID_COMMAND, commandName));
     }

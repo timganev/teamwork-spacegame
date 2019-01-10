@@ -21,12 +21,6 @@ public class LostShipImpl extends ShipBase implements LostShip {
         super.shipName = shipName;
     }
 
-
-    public LostShipImpl(int yearLostShip) {
-        this.yearLostShip = yearLostShip;
-    }
-
-
     @Override
     public double getShipSpeed() {
         return 0;
