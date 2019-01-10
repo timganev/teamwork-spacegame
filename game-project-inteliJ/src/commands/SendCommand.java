@@ -56,7 +56,7 @@ public class SendCommand implements Command {
                         "The trip will take %d years",
                 ((StarShipBase) engine.getShip().get(shipID)).getPropulsion(),
                 ((StarShipBase) engine.getShip().get(shipID)).getType(),
-                shipID, engine.getSpaceObject().get(spaceObjectID), turnsToDestination);
+                shipID+1, engine.getSpaceObject().get(spaceObjectID), turnsToDestination);
     }
 
     private void setTurnsToDestination() {
