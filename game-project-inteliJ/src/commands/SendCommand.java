@@ -36,6 +36,7 @@ public class SendCommand implements Command {
         if (engine.getShip().get(shipID) instanceof StarShipBase) {
 
             setTurnsToDestination();
+            ((StarShipBase) engine.getShip().get(shipID)).setDestination(spaceObjectID);
             return printReport();
 
         } else {
@@ -48,7 +49,7 @@ public class SendCommand implements Command {
         return String.format(
                 "Send %s %s with ID %d to" + System.lineSeparator() +
                         "%s" + System.lineSeparator() +
-                        "The trip will take %d years",
+                        "The trip will take %d years"+ System.lineSeparator(),
                 ((StarShipBase) engine.getShip().get(shipID)).getPropulsion(),
                 ((StarShipBase) engine.getShip().get(shipID)).getType(),
                 shipID+1, engine.getSpaceObject().get(spaceObjectID), turnsToDestination);

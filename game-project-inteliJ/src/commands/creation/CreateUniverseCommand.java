@@ -40,7 +40,7 @@ public class CreateUniverseCommand implements Command {
             engine.getSpaceObject().add(solBelt);
             engine.getSpaceObject().add(alfaBelt);
             if (engine.getSpaceObject().get(0) instanceof Planet) {
-                ((Planet) engine.getSpaceObject().get(0)).setPopulation(43242);
+                ((Planet) engine.getSpaceObject().get(0)).setPopulation(1000000);
             }
 
 
