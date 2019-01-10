@@ -40,7 +40,7 @@ public class SystemShipGuardianImpl extends SystemShipBase implements SystemShip
 
     @Override
     public void setShipName(String shipName) {
-        super.shipName = "Guardian" + getShipId();
+        super.shipName = "Guardian";
     }
 
     @Override

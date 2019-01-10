@@ -5,8 +5,6 @@ public interface Ship {
 
     String getShipName();
 
-    int getShipId();
-
     double getShipMass();
 
     String toString();

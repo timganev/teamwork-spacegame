@@ -16,7 +16,7 @@ public class SystemShipMinningImpl extends SystemShipBase implements SystemShipM
     @Override
     public void setShipName(String shipName) {
         if (shipName == null || shipName.isEmpty() || shipName.matches("\\s+")) {
-            super.shipName = "MinningShip" + getShipId();
+            super.shipName = "MinningShip";
         } else if (shipName.length() < Constants.MIN_SHIP_NAME_LENGTH || shipName.length() > Constants.MAX_SHIP_NAME_LENGTH ) {
             throw new IllegalArgumentException("Ship name cant be less than 2 or more than 15");
         } else {

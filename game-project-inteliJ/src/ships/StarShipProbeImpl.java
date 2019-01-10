@@ -36,7 +36,7 @@ public class StarShipProbeImpl extends StarShipBase implements StarShipProbe {
     public void setShipName(String shipName) {
 
         if (shipName == null || shipName.isEmpty() || shipName.matches("\\s+")) {
-            super.shipName = getPropulsion().toString() + getShipId();
+            super.shipName = getPropulsion().toString();
         } else if (shipName.length() < Constants.MIN_SHIP_NAME_LENGTH || shipName.length() > Constants.MAX_SHIP_NAME_LENGTH) {
             throw new IllegalArgumentException("Ship name should be more than 2 and less than 15");
         } else {

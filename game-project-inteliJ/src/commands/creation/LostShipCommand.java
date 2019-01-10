@@ -29,7 +29,7 @@ public class LostShipCommand implements Command {
             shipId = Integer.parseInt(parameters.get(0)) - 1;
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse LostShip command parameters.");
+            throw new IllegalArgumentException("Failed to parse LostShip command parameters."+System.lineSeparator());
         }
 
         shipName = engine.getShip().get(shipId).getShipName();
@@ -39,7 +39,8 @@ public class LostShipCommand implements Command {
 
         Ship ship = factory.createLostShip(shipName, shipMass);
         engine.getShip().set(shipId, ship);
-        return String.format("Ship with ID %d was lost.", shipIdtoarrId);
+
+        return String.format("Ship with ID %d was lost."+System.lineSeparator(), shipId);
 
 
 

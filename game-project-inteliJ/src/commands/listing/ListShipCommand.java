@@ -27,7 +27,9 @@ public class ListShipCommand implements Command {
 
         List<String> listShips = new ArrayList<>();
         for (Ship ship : ships) {
-            listShips.add(ship.toString());
+            listShips.add(
+                    String.format("Ship ID: %d" + System.lineSeparator(),engine.getShip().indexOf(ship) + 1) +
+                    ship.toString());
         }
 
         return String.join( System.lineSeparator(), listShips).trim();

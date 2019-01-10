@@ -35,14 +35,15 @@ public class CreateAsteroidFieldCommand implements Command {
             hasRareEarthMinerals = Boolean.parseBoolean(parameters.get(5));;
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse AsteroidField command parameters.");
+            throw new IllegalArgumentException("Failed to parse AsteroidField command parameters."+System.lineSeparator());
         }
 
         AsteroidField asteroidField = factory.createAsteroidField(objectName, hostStarName, hostStarType, distanceLightYears, hasMetals, hasRareEarthMinerals);
         engine.getSpaceObject().add(asteroidField);
 
+//        engine.getSpaceObject().get(engine.getSpaceObject().size()-1).setObjectID(engine.getSpaceObject().size());
 
-        return String.format("AsteroidField with ID %d was created.", engine.getSpaceObject().size());
+        return String.format("AsteroidField with ID %d was created."+System.lineSeparator(), engine.getSpaceObject().size());
     }
 
 }

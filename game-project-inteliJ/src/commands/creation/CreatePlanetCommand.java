@@ -45,7 +45,8 @@ public class CreatePlanetCommand implements Command {
         Planet planet = factory.createPlanet(objectName, hostStarName, hostStarType, distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays);
         engine.getSpaceObject().add(planet);
 
-
+//        System.out.println(engine.getSpaceObject().get(engine.getSpaceObject().indexOf(planet)));
+            //size()-1).setObjectID(engine.getSpaceObject().size());
 
         return String.format("Planet with ID %d was created.", engine.getSpaceObject().size());
     }
