@@ -41,8 +41,6 @@ public class CreateAsteroidFieldCommand implements Command {
         AsteroidField asteroidField = factory.createAsteroidField(objectName, hostStarName, hostStarType, distanceLightYears, hasMetals, hasRareEarthMinerals);
         engine.getSpaceObject().add(asteroidField);
 
-//        engine.getSpaceObject().get(engine.getSpaceObject().size()-1).setObjectID(engine.getSpaceObject().size());
-
         return String.format("AsteroidField with ID %d was created."+System.lineSeparator(), engine.getSpaceObject().size());
     }
 

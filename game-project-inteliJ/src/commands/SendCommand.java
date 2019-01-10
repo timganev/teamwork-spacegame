@@ -34,7 +34,7 @@ public class SendCommand implements Command {
             shipID = Integer.parseInt(parameters.get(0))-1;
             spaceObjectID = Integer.parseInt(parameters.get(1));
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to pr");
+            throw new IllegalArgumentException("Failed to parse command parameters.");
         }
 
 

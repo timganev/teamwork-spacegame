@@ -7,7 +7,6 @@ import core.factories.Factory;
 import ships.ShipBase;
 import ships.shipContracts.LostShip;
 import ships.shipContracts.Ship;
-import spaceObjects.contracts.AsteroidField;
 import spaceObjects.contracts.Planet;
 import spaceObjects.contracts.SpaceObject;
 
@@ -24,25 +23,46 @@ public class NextCommand implements Command {
 
     }
 
-
+    private int jumpYears;
     private int totalPopulation = 0;
 
     public String execute(List<String> parameters) {
 //        int totalShips = engine.getShip().size();
 //        int activeShips = totalShips - LostShips();
 
-        GameBoard.year++;
 
-        updateShips();
+        try {
+            jumpYears = Integer.parseInt(parameters.get(0));
+            GameBoard.year+=this.jumpYears ;
+            updateResourceWithYear();
+        } catch (Exception e) {
+            GameBoard.year++;
+        }
+
+
+        updateTurnsToDestination();
 
         updateSpaceObjects();
+
+        updateResource();
 
         return printReport();
 
     }
 
+    private void updateResource() {
+        for (Ship ship : engine.getShip()) {
+            ship.next();
+        }
+    }
+    private void updateResourceWithYear() {
+        for (Ship ship : engine.getShip()) {
+            ship.next(this.jumpYears);
+        }
+    }
 
-    private void updateShips() {
+
+    private void updateTurnsToDestination() {
         for (Ship ship : engine.getShip()) {
             if (ship.getTurnsToDestination() > 0) {
                 ((ShipBase) ship).setTurnsToDestination(ship.getTurnsToDestination() - 1);
@@ -80,7 +100,7 @@ public class NextCommand implements Command {
         String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(
-                        "Year: %d" + System.lineSeparator() +
+                "Year: %d" + System.lineSeparator() +
                         numberOfyearsBeforeAfter + System.lineSeparator() +
                         "Known Space Objects   : %d" + System.lineSeparator() +
                         "Total Population      : %d " + System.lineSeparator() +
@@ -91,8 +111,6 @@ public class NextCommand implements Command {
                         "**************************" + System.lineSeparator(),
                 GameBoard.getYear(), engine.getSpaceObject().size(), totalPopulation, engine.getShip().size(), engine.getShip().size() - LostShips(), LostShips());
     }
-
-
 
 
 }
