@@ -12,10 +12,7 @@ public interface SpaceObject {
     HostStarType getHostStarType();
 
     double getDistanceLightYears();
-
-//    int getObjectID();
-//
-//    void setObjectID(int objectID);
+    
 
 }
 

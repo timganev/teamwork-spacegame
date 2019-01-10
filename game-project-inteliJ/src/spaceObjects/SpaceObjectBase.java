@@ -10,12 +10,8 @@ public abstract class SpaceObjectBase implements SpaceObject {
     private String hostStarName;
     private HostStarType hostStarType;
     private double distanceLightYears;
-    private int objectID = 0;
 
-//    @Override
-//    public int getObjectID() {
-//        return objectID;
-//    }
+
 
     public SpaceObjectBase(String objectName, String hostStarName, HostStarType hostStarType, double distanceLightYears) {
         setObjectName(objectName);
@@ -24,9 +20,6 @@ public abstract class SpaceObjectBase implements SpaceObject {
         setDistanceLightYears(distanceLightYears);
     }
 
-    public void setObjectID(int objectID) {
-        this.objectID = objectID;
-    }
 
     @Override
     public String getObjectName() {

@@ -9,13 +9,10 @@ public abstract class ShipBase implements Ship {
     private static int shipId = 0;
     protected String shipName;
     protected double shipMass;
-    private int currID = shipId + 1;
     private int turnsToDestination;
     private int destination;
-    private ListLostShipsCommand listLostShipsCommand;
 
     public ShipBase(String shipName, double shipMass) {
-        shipId++;
         setShipName(shipName);
         setShipMass(shipMass);
         this.turnsToDestination = 0;
@@ -55,11 +52,6 @@ public abstract class ShipBase implements Ship {
     }
 
     @Override
-    public int getShipId() {
-        return shipId;
-    }
-
-    @Override
     public double getShipMass() {
         return this.shipMass;
     }
@@ -81,11 +73,10 @@ public abstract class ShipBase implements Ship {
         return String.format(
                 "Ship type: %s " + System.lineSeparator() +
                         "Ship name: %s" + System.lineSeparator() +
-                        "Ship ID: %d" + System.lineSeparator() +
                         "Ship mass: %.2f " + System.lineSeparator() +
                         "Years to destination %d" + System.lineSeparator() +
                         "Destination ID %d" + System.lineSeparator(),
-                getType(), getShipName(), this.currID - listLostShipsCommand.getListLostShips().size(), getShipMass(), getTurnsToDestination(), getDestination()
+                getType(), getShipName(), getShipMass(), getTurnsToDestination(), getDestination()
         );
     }
 

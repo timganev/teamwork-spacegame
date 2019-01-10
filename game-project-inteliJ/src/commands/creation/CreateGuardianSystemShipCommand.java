@@ -25,8 +25,9 @@ public class CreateGuardianSystemShipCommand implements Command {
 
         try {
             weapons = parameters.get(0);
-            crew = Boolean.parseBoolean(parameters.get(1));
-            shipMass = Double.parseDouble(parameters.get(2));
+            shipMass = Double.parseDouble(parameters.get(1));
+            crew = Boolean.parseBoolean(parameters.get(2));
+
 
 
         } catch (Exception e) {
