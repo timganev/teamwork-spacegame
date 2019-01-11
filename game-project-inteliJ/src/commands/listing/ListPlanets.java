@@ -23,7 +23,7 @@ public class ListPlanets implements Command {
 
 
         if (engine.getSpaceObject().size() == 0) {
-            return "There are no known space objects.";
+            return "There are no known planets.";
         }
 
         List<String> planets = new ArrayList<>();
