@@ -36,7 +36,7 @@ public class StarShipColonialImpl extends StarShipBase implements StarShipColoni
 
     public void setCrewCount(int crewCount) {
         if (crewCount < Constants.MIN_CREW_OF_COLONIAL_SHIP) {
-            throw new IllegalArgumentException("Crew should be min 1000 persons");
+            throw new IllegalArgumentException("Crew should be min 1000");
         }
         this.crewCount = crewCount;
     }

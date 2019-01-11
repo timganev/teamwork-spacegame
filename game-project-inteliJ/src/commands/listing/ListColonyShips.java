@@ -27,13 +27,13 @@ public class ListColonyShips implements Command  {
             return "There aren't any ships.";
         }
 
-        List<String> listActiveShips = new ArrayList<>();
+        List<String> listColonialShips = new ArrayList<>();
         for (Ship ship : ships) {
-            if (!(ship instanceof StarShipColonial)) {
-                listActiveShips.add(ship.toString());
+            if (ship instanceof StarShipColonial) {
+                listColonialShips.add(ship.toString());
             }
         }
 
-        return String.join(System.lineSeparator(), listActiveShips).trim();
+        return String.join(System.lineSeparator(), listColonialShips).trim();
     }
 }

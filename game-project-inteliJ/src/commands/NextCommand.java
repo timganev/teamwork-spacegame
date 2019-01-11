@@ -78,10 +78,15 @@ public class NextCommand implements Command {
     }
 
     private void buildColony(Ship ship) {
+        String shipname = ship.getShipName();
+        int shipId = engine.getShip().indexOf(ship);
+        int destination =  ship.getDestination();
+        int population = ((StarShipColonial) ship).getCrewCount();
+
         if (ship instanceof StarShipColonial) {
-            System.out.println(ship.getShipName() + " build new colony" + System.lineSeparator());
-            ((Planet) engine.getSpaceObject().get(ship.getDestination())).setPopulation(((StarShipColonial) ship).getCrewCount());
-            new LostShipCommand(factory, engine).executeCall(engine.getShip().indexOf(ship));
+            System.out.println(shipname + " build new colony" + System.lineSeparator());
+            ((Planet) engine.getSpaceObject().get(destination)).setPopulation(population);
+            new LostShipCommand(factory, engine).executeCall(shipId);
         }
     }
 
@@ -135,11 +140,11 @@ public class NextCommand implements Command {
                         numberOfyearsBeforeAfter + System.lineSeparator() +
                         "Known Space Objects   : %d" + System.lineSeparator() +
                         "Colonized planets     : %d" + System.lineSeparator() +
-                        "Total Population      : %d " + System.lineSeparator() +
+                        "Total Population      : %d" + System.lineSeparator() +
                         "**************************" + System.lineSeparator() +
-                        "Total number of ships : %d " + System.lineSeparator() +
-                        "   Active ships       : %d " + System.lineSeparator() +
-                        "   Lost ships         : %d " + System.lineSeparator() +
+                        "Total number of ships : %d" + System.lineSeparator() +
+                        "   Active ships       : %d" + System.lineSeparator() +
+                        "   Lost ships         : %d" + System.lineSeparator() +
                         "**************************" + System.lineSeparator(),
                 GameBoard.getYear(), engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
     }

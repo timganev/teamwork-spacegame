@@ -5,6 +5,7 @@ import commands.contracts.Command;
 import core.contracts.Engine;;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
+import ships.shipContracts.StarShipColonial;
 
 import java.util.List;
 
@@ -49,13 +50,15 @@ public class LostShipCommand implements Command {
 
 
         shipName = engine.getShip().get(shipId).getShipName();
-
         shipMass = engine.getShip().get(shipId).getShipMass();
 
-        Ship ship = factory.createLostShip(shipName, shipMass);
-        engine.getShip().set(shipId, ship);
-
-
+        if (engine.getShip().get(shipId) instanceof StarShipColonial) {
+            Ship ship = factory.createLostShip(shipName, shipMass);
+            engine.getShip().set(shipId, ship);
+        } else {
+            Ship ship = factory.createSystemShipMinning(shipName, shipMass, false);
+            engine.getShip().set(shipId, ship);
+        }
 
 
     }
