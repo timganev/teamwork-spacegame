@@ -62,8 +62,6 @@ public abstract class ShipBase implements Ship {
 
     public abstract String getType();
 
-    @Override
-    public abstract void next();
 
     @Override
     public String toString() {

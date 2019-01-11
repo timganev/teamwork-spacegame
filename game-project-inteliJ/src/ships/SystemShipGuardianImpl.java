@@ -30,8 +30,6 @@ public class SystemShipGuardianImpl extends SystemShipBase implements SystemShip
         }
     }
 
-    @Override
-    public void next() {}
 
     @Override
     public void next(int years) {}

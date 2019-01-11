@@ -9,8 +9,6 @@ public interface Ship {
 
     String toString();
 
-    void next();
-
     void next(int years);
 
     int getTurnsToDestination();

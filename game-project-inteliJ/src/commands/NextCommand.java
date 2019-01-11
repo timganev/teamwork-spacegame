@@ -62,7 +62,7 @@ public class NextCommand implements Command {
 
     private void updateResource() {
         for (Ship ship : engine.getShip()) {
-            ship.next();
+            ship.next(this.jumpYears);
         }
     }
 
