@@ -160,8 +160,8 @@ public class AgencyTests {
         String testOutputFilePath = "./src/com/telerikacademy/agency/tests/TestData/test." + testNumber + ".out.txt";
         byte[] testOutputData = Files.readAllBytes(Paths.get(testOutputFilePath));
         String expected = new String(testOutputData, StandardCharsets.UTF_8);
-        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8);
-//        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8).replaceAll("\r", "").replaceAll(",", "."); // .replaceAll("\r", "");
+//        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8);
+        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8).replaceAll("\r", ""); //.replaceAll(",", "."); // .replaceAll("\r", "");
 
         Assert.assertEquals(expected.trim(), actual.trim());
     }

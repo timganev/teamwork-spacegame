@@ -3,7 +3,6 @@ package commands;
 import commands.contracts.Command;
 import commands.creation.LostShipCommand;
 import constants.Constants;
-import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.ShipBase;
@@ -72,22 +71,27 @@ public class NextCommand implements Command {
             if (ship.getTurnsToDestination() > 0) {
                 ((ShipBase) ship).setTurnsToDestination(ship.getTurnsToDestination() - jumpYears);
                 if (ship.getTurnsToDestination() <= 0) {
-                    buildColony(ship);
+                    arriveAtDestination(ship);
                 }
             }
         }
     }
 
-    private void buildColony(Ship ship) {
+    private void arriveAtDestination(Ship ship) {
         String shipname = ship.getShipName();
         int shipId = engine.getShip().indexOf(ship);
         int destination =  ship.getDestination();
-        int population = ((StarShipColonial) ship).getCrewCount();
+        String destinationName = engine.getSpaceObject().get(destination).getObjectName();
 
         if (ship instanceof StarShipColonial) {
-            System.out.println(shipname + " build new colony" + System.lineSeparator());
+            int population = ((StarShipColonial) ship).getCrewCount();
+
+            System.out.println(String.format("%s build new colony at %s" + System.lineSeparator(), shipname, destinationName));
             ((Planet) engine.getSpaceObject().get(destination)).setPopulation(population);
-            new LostShipCommand(factory, engine).executeCall(shipId);
+            new LostShipCommand(factory, engine).executeCall(shipId, destination);
+        } else {
+            System.out.println(String.format("%s Probe arrived at %s" + System.lineSeparator(), shipname, destinationName));
+            new LostShipCommand(factory, engine).executeCall(shipId, destination);
         }
     }
 
@@ -133,7 +137,7 @@ public class NextCommand implements Command {
 
         String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
         yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
-        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d YEAR " : "%d years ";
+        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
         String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(

@@ -1,3 +1,2 @@
-createbus 30 0.08
-createbus 30 2.7
+createstarshiprobe Sail Dominator 100000
 exit

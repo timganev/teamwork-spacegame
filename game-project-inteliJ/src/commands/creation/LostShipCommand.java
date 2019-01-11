@@ -6,6 +6,7 @@ import core.contracts.Engine;;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
 import ships.shipContracts.StarShipColonial;
+import spaceObjects.contracts.Planet;
 
 import java.util.List;
 
@@ -42,7 +43,7 @@ public class LostShipCommand implements Command {
 
     }
 
-    public void executeCall(int shipId) {
+    public void executeCall(int shipId, int destination) {
 
 
         String shipName;
@@ -56,8 +57,13 @@ public class LostShipCommand implements Command {
             Ship ship = factory.createLostShip(shipName, shipMass);
             engine.getShip().set(shipId, ship);
         } else {
-            Ship ship = factory.createSystemShipMinning(shipName, shipMass, false);
-            engine.getShip().set(shipId, ship);
+            if (engine.getSpaceObject().get(destination) instanceof Planet) {
+                Ship ship = factory.createSystemShipSolar(shipName, shipMass, false);
+                engine.getShip().set(shipId, ship);
+            } else {
+                Ship ship = factory.createSystemShipMinning(shipName, shipMass, false);
+                engine.getShip().set(shipId, ship);
+            }
         }
 
 
