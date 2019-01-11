@@ -30,8 +30,6 @@ public class LostShipImpl extends ShipBase implements LostShip {
         return "Lost ship";
     }
 
-    @Override
-    public void next() {}
 
     @Override
     public void next(int years) {}

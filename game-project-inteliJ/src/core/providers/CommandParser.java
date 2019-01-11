@@ -89,7 +89,13 @@ public class CommandParser implements Parser {
             case "listactiveships":
                 return new ListActiveShips(factory, engine);
 
+            case "listplanets":
+                return new ListPlanets(factory, engine);
+
+            case "listcolonial":
+                return new ListColonyShips(factory, engine);
         }
+
         throw new IllegalArgumentException(String.format(INVALID_COMMAND, commandName));
     }
 }
