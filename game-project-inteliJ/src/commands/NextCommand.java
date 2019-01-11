@@ -19,14 +19,16 @@ public class NextCommand implements Command {
     private final Factory factory;
     private final Engine engine;
 
+
     public NextCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
 
     }
 
+
     private int jumpYears;
-    private int totalPopulation = 0;
+    private long totalPopulation = 0;
     private int colonizedPlanets = 0;
 
     public String execute(List<String> parameters) {
@@ -44,9 +46,13 @@ public class NextCommand implements Command {
 
         GameBoard.year += this.jumpYears;
 
+
+
         updateTurnsToDestination();
 
         updateSpaceObjects();
+
+        Extinction();
 
         updateResource();
 
@@ -79,7 +85,6 @@ public class NextCommand implements Command {
         }
     }
 
-
     private void updateSpaceObjects() {
 
         for (SpaceObject spaceObject : engine.getSpaceObject()) {
@@ -102,8 +107,21 @@ public class NextCommand implements Command {
         return counterLostShip;
     }
 
+    private void Extinction() {
+        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+
+        if (yearsBeforeAfterExtinction >= 0 && GameBoard.loadCounter > 0) {
+            for (SpaceObject spaceObject : engine.getSpaceObject()) {
+                if (spaceObject instanceof Planet && ((Planet) spaceObject).getObjectName().equals("Earth")) {
+                    ((Planet) spaceObject).setPopulation(0);
+                }
+            }
+        }
+    }
+
     private String printReport() {
         int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+
         int totalShips = engine.getShip().size();
         int activeShips = totalShips - LostShips();
 

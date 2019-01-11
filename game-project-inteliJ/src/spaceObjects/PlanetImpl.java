@@ -2,7 +2,6 @@ package spaceObjects;
 
 import spaceObjects.contracts.Planet;
 import enums.HostStarType;
-//import celestial.HostStarType;
 
 public class PlanetImpl extends SpaceObjectBase implements Planet {
     private final static String CLASS_NAME_PRINT = "Planet";
@@ -10,7 +9,7 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
     private double radiusEarthR;
     private double tempC;
     private double periodDays;
-    private int population = 0;
+    private long population = 0;
 
     public PlanetImpl(String objectName, String hostStarName, HostStarType hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays) {
         super(objectName, hostStarName, hostStarType, distanceLightYears);
@@ -43,7 +42,7 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
     }
 
     @Override
-    public int getPopulation() {
+    public long getPopulation() {
         return this.population;
     }
 
@@ -82,7 +81,7 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
         this.periodDays = periodDays;
     }
 
-    public void setPopulation(int population) {
+    public void setPopulation(long population) {
         this.population = population;
     }
 

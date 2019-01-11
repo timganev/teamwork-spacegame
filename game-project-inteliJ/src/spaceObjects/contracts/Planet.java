@@ -10,8 +10,8 @@ public interface Planet extends SpaceObject {
 
     double getPeriodDays();
 
-    int getPopulation();
+    long getPopulation();
 
-    void setPopulation(int population);
+    void setPopulation(long population);
 
 }
