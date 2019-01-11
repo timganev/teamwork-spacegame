@@ -18,21 +18,38 @@ Application should support turns. Each move represents a calendar year and is ca
 
 
 List of commands :
+
 1  next
+
 2  load
+
 3  listobjects
+
 4  listships
+
 5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 11 true true
+
 6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 11 1115555
+
 7  createcolonialship       example: createcolonialship Sail Ark 3000 100000
+
 8  createstarshiprobe       example: createstarshiprobe Sail Dominator 100000
+
 9  createsystemshipguardian example: createsystemshipguardian Rocket 75000 true
+
 10 createsystemshipminning  example: createsystemshipminning Apolo11 75000 true
+
 11 createsystemshipsolar    example: createsystemshipsolar Apolo9 75000 true
+
 11 send                     example: send 0 3
+
 11 lostship                 example: lostship 1
+
 12 listactiveships
+
 13 listlostships
+
 14 exit
+
 ******************************************************************************
 
