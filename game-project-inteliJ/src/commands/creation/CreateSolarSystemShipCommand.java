@@ -1,6 +1,7 @@
 package commands.creation;
 
 import commands.contracts.Command;
+import constants.Constants;
 import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
@@ -34,13 +35,13 @@ public class CreateSolarSystemShipCommand implements Command {
             throw new IllegalArgumentException("Failed to parse SolarShip command parameters.");
         }
 
-        if (GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear() > 0) {
+        if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
             Ship ship = factory.createSystemShipSolar(shipName, shipMass, crew);
             engine.getShip().add(ship);
 
             return String.format("Solar ship with ID %d was created.", engine.getShip().size());
         } else {
-            return String.format("Can not created new ships after Extinction Level Event in year %d.", GameBoard.getYearExtinctionLevelEvent());
+            return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
 
 

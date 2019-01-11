@@ -3,6 +3,7 @@ package commands.creation;
 //import celestial.enums.HostStarType;
 
 import commands.contracts.Command;
+import constants.Constants;
 import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
@@ -22,10 +23,10 @@ public class CreateUniverseCommand implements Command {
     }
 
     public String execute(List<String> parameters) {
-        if (GameBoard.loadCounter>0) {
+        if (Constants.LOADCOUNTER >0) {
             return String.format("Known universe was already loaded."+System.lineSeparator());
         } else {
-            GameBoard.loadCounter++;
+            Constants.LOADCOUNTER++;
             Planet earth = factory.createPlanet("Earth", "Sol", "yellow", 0, 1, 1, 15, 365.4);
             Planet alfab = factory.createPlanet("AlfaB", "Alfa", "blue", 4, 0.9, 1.1, -25, 101);
 

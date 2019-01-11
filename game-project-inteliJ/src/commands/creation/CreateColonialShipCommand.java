@@ -2,6 +2,7 @@ package commands.creation;
 
 
 import commands.contracts.Command;
+import constants.Constants;
 import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
@@ -36,16 +37,16 @@ public class CreateColonialShipCommand implements Command {
             throw new IllegalArgumentException("Failed to parse ColonialShip command parameters.");
         }
 
-        if (GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear() > 0) {
-            if (GameBoard.getYear() >= GameBoard.yearColonialShipCapability) {
+        if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
+            if (Constants.YEAR >= Constants.YEAR_COLONIAL_SHIP_CAPABILITY) {
                 Ship ship = factory.createColonialShip(propulsion, shipName, crew, shipMass);
                 engine.getShip().add(ship);
                 return String.format("ColonialShip with ID %d was created.", engine.getShip().size());
             } else {
-                return String.format("Can not created ColonialShip before develop  Colonial Ship Capability in year %d.", GameBoard.yearColonialShipCapability);
+                return String.format("Can not created ColonialShip before develop  Colonial Ship Capability in YEAR %d.", Constants.YEAR_COLONIAL_SHIP_CAPABILITY);
             }
         } else {
-            return String.format("Can not created new ships after Extinction Level Event in year %d.", GameBoard.getYearExtinctionLevelEvent());
+            return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
 
     }

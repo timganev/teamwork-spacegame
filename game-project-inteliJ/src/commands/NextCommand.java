@@ -2,6 +2,7 @@ package commands;
 
 import commands.contracts.Command;
 import commands.creation.LostShipCommand;
+import constants.Constants;
 import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
@@ -44,7 +45,7 @@ public class NextCommand implements Command {
             jumpYears = 1;
         }
 
-        GameBoard.year += this.jumpYears;
+        Constants.YEAR += this.jumpYears;
 
 
 
@@ -108,9 +109,9 @@ public class NextCommand implements Command {
     }
 
     private void extinction() {
-        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+        int yearsBeforeAfterExtinction = Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR;
 
-        if (yearsBeforeAfterExtinction <= 0 && GameBoard.loadCounter > 0) {
+        if (yearsBeforeAfterExtinction <= 0 && Constants.LOADCOUNTER > 0) {
             for (SpaceObject spaceObject : engine.getSpaceObject()) {
                 if (spaceObject instanceof Planet && ((Planet) spaceObject).getObjectName().equals("Earth")) {
                     ((Planet) spaceObject).setPopulation(0);
@@ -120,14 +121,14 @@ public class NextCommand implements Command {
     }
 
     private String printReport() {
-        int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
+        int yearsBeforeAfterExtinction = Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR;
 
         int totalShips = engine.getShip().size();
         int activeShips = totalShips - lostShips();
 
         String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
         yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
-        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
+        String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d YEAR " : "%d years ";
         String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(
@@ -141,7 +142,7 @@ public class NextCommand implements Command {
                         "   Active ships       : %d " + System.lineSeparator() +
                         "   Lost ships         : %d " + System.lineSeparator() +
                         "**************************" + System.lineSeparator(),
-                GameBoard.getYear(), engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
+                Constants.YEAR, engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
     }
 
 

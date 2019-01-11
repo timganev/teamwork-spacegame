@@ -31,6 +31,16 @@ public final class Constants {
     public static final double MINERALS_FOR_A_YEAR_FROM_MINNING_SHIP = 2000;
     public static final double SUN_ENERGY_FOR_A_YEAR_FROM_SOLAR_SHIP = 100000;
 
+    public static final int YEAR_END_GAME = 2500;
+    public static final int YEAR_EXTINCTION_LEVEL_EVENT = 2100;
+    public static int YEAR_COLONIAL_SHIP_CAPABILITY = 2040;
+    public static int YEAR = 2020;
+    public static int LOADCOUNTER = 0;
+
+
+    //    public static int yearNukesDriveCapability = 2020;
+    //    public static int yearFusionDriveCapability = 2020;
+    //    public static int yearAntimeterDriveCapability = 2020;
 
 
 
