@@ -4,6 +4,8 @@ import commands.contracts.Command;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.StarShipBase;
+import ships.shipContracts.StarShipProbe;
+import spaceObjects.contracts.Planet;
 
 import java.util.List;
 
@@ -26,33 +28,48 @@ public class SendCommand implements Command {
 
 
         try {
-            shipID = Integer.parseInt(parameters.get(0))-1;
+            shipID = Integer.parseInt(parameters.get(0)) - 1;
             spaceObjectID = Integer.parseInt(parameters.get(1));
         } catch (Exception e) {
             throw new IllegalArgumentException("Failed to parse command parameters.");
         }
 
 
-        if (engine.getShip().get(shipID) instanceof StarShipBase) {
+        if (engine.getShip().get(shipID) instanceof StarShipBase && engine.getShip().get(shipID).getTurnsToDestination() == 0) {
 
-            setTurnsToDestination();
-            ((StarShipBase) engine.getShip().get(shipID)).setDestination(spaceObjectID);
-            return printReport();
+            if (engine.getShip().get(shipID) instanceof StarShipProbe) {
+                sendingStarShip();
+                return printReport();
+            } else {
+                if (engine.getSpaceObject().get(spaceObjectID) instanceof Planet) {
+                    sendingStarShip();
+                    return printReport();
+                } else {
+                    return String.format("Colony ship can be send only to Planet");
+                }
+            }
+
 
         } else {
-            return String.format("The ship has no propulsion");
+            return String.format("The ship has no propulsion or is already sent");
         }
     }
 
+
+    private void sendingStarShip() {
+        setTurnsToDestination();
+        ((StarShipBase) engine.getShip().get(shipID)).setDestination(spaceObjectID);
+
+    }
 
     private String printReport() {
         return String.format(
                 "Send %s %s with ID %d to" + System.lineSeparator() +
                         "%s" + System.lineSeparator() +
-                        "The trip will take %d years"+ System.lineSeparator(),
+                        "The trip will take %d years" + System.lineSeparator(),
                 ((StarShipBase) engine.getShip().get(shipID)).getPropulsion(),
                 ((StarShipBase) engine.getShip().get(shipID)).getType(),
-                shipID+1, engine.getSpaceObject().get(spaceObjectID), turnsToDestination);
+                shipID + 1, engine.getSpaceObject().get(spaceObjectID), turnsToDestination);
     }
 
     private void setTurnsToDestination() {

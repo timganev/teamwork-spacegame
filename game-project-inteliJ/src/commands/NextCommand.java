@@ -27,7 +27,7 @@ public class NextCommand implements Command {
 
     private int jumpYears;
     private int totalPopulation = 0;
-    private int colonizedPlanets=0;
+    private int colonizedPlanets = 0;
 
     public String execute(List<String> parameters) {
 
@@ -60,27 +60,32 @@ public class NextCommand implements Command {
         }
     }
 
-    public void updateTurnsToDestination() {
+    private void updateTurnsToDestination() {
         for (Ship ship : engine.getShip()) {
             if (ship.getTurnsToDestination() > 0) {
                 ((ShipBase) ship).setTurnsToDestination(ship.getTurnsToDestination() - jumpYears);
                 if (ship.getTurnsToDestination() <= 0) {
-                    if (ship instanceof StarShipColonial) {
-                        System.out.println(ship.getShipName() + " build new colony" + System.lineSeparator());
-                        ((Planet) engine.getSpaceObject().get(ship.getDestination())).setPopulation(((StarShipColonial) ship).getCrewCount());
-                        new LostShipCommand(factory, engine).executeCall(engine.getShip().indexOf(ship));
-                    }
+                    buildColony(ship);
                 }
             }
         }
     }
+
+    private void buildColony(Ship ship) {
+        if (ship instanceof StarShipColonial) {
+            System.out.println(ship.getShipName() + " build new colony" + System.lineSeparator());
+            ((Planet) engine.getSpaceObject().get(ship.getDestination())).setPopulation(((StarShipColonial) ship).getCrewCount());
+            new LostShipCommand(factory, engine).executeCall(engine.getShip().indexOf(ship));
+        }
+    }
+
 
     private void updateSpaceObjects() {
 
         for (SpaceObject spaceObject : engine.getSpaceObject()) {
             if (spaceObject instanceof Planet) {
                 totalPopulation = totalPopulation + ((Planet) spaceObject).getPopulation();
-                if (((Planet) spaceObject).getPopulation()>0) {
+                if (((Planet) spaceObject).getPopulation() > 0) {
                     colonizedPlanets++;
                 }
             }
@@ -108,7 +113,7 @@ public class NextCommand implements Command {
         String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(
-                        "Year: %d" + System.lineSeparator() +
+                "Year: %d" + System.lineSeparator() +
                         numberOfyearsBeforeAfter + System.lineSeparator() +
                         "Known Space Objects   : %d" + System.lineSeparator() +
                         "Colonized planets     : %d" + System.lineSeparator() +

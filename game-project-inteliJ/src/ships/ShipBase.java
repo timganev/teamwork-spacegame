@@ -45,9 +45,6 @@ public abstract class ShipBase implements Ship {
     }
 
     public void setTurnsToDestination(int turnsToDestination) {
-        if (turnsToDestination < 0) {
-            throw new IllegalArgumentException("Ship mass should be zero or more");
-        }
         this.turnsToDestination = turnsToDestination;
     }
 
