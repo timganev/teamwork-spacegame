@@ -52,7 +52,7 @@ public class NextCommand implements Command {
 
         updateSpaceObjects();
 
-        Extinction();
+        extinction();
 
         updateResource();
 
@@ -97,7 +97,7 @@ public class NextCommand implements Command {
         }
     }
 
-    private int LostShips() {
+    private int lostShips() {
         int counterLostShip = 0;
         for (Ship ship : engine.getShip()) {
             if (ship instanceof LostShip) {
@@ -107,7 +107,7 @@ public class NextCommand implements Command {
         return counterLostShip;
     }
 
-    private void Extinction() {
+    private void extinction() {
         int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
 
         if (yearsBeforeAfterExtinction <= 0 && GameBoard.loadCounter > 0) {
@@ -123,12 +123,12 @@ public class NextCommand implements Command {
         int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
 
         int totalShips = engine.getShip().size();
-        int activeShips = totalShips - LostShips();
+        int activeShips = totalShips - lostShips();
 
         String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
         yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
         String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
-        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
+        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(
                 "Year: %d" + System.lineSeparator() +
@@ -141,7 +141,7 @@ public class NextCommand implements Command {
                         "   Active ships       : %d " + System.lineSeparator() +
                         "   Lost ships         : %d " + System.lineSeparator() +
                         "**************************" + System.lineSeparator(),
-                GameBoard.getYear(), engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, LostShips());
+                GameBoard.getYear(), engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
     }
 
 
