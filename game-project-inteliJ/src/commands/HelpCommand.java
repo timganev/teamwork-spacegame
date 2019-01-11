@@ -45,15 +45,19 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "11 createsystemshipsolar    example: createsystemshipsolar Apolo9 75000 true" +
                         System.lineSeparator() +
-                        "11 send                     example: send 0 3" +
+                        "12 send                     example: send 0 3" +
                         System.lineSeparator() +
-                        "11 lostship                 example: lostship 1" +
+                        "13 lostship                 example: lostship 1" +
                         System.lineSeparator() +
-                        "12 listactiveships"   +
+                        "14 listactiveships"   +
                         System.lineSeparator() +
-                        "13 listlostships"   +
+                        "15 listlostships"   +
                         System.lineSeparator() +
-                        "14 exit"   +
+                        "16 listplanets"   +
+                        System.lineSeparator() +
+                        "17 listcolonial"   +
+                        System.lineSeparator() +
+                        "18 exit"   +
                         System.lineSeparator() +
                         "******************************************************************************" +
                         System.lineSeparator());

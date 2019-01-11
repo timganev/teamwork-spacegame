@@ -42,9 +42,6 @@ public class StarShipColonialImpl extends StarShipBase implements StarShipColoni
     }
 
     @Override
-    public void next() {}
-
-    @Override
     public void next(int years) {}
 
     @Override

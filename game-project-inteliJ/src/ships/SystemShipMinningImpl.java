@@ -39,11 +39,6 @@ public class SystemShipMinningImpl extends SystemShipBase implements SystemShipM
         return this.iron;
     }
 
-    @Override
-    public void next() {
-        this.iron = this.iron + Constants.IRON_FOR_A_YEAR_FROM_MINNING_SHIP;
-        this.minerals = this.minerals + Constants.MINERALS_FOR_A_YEAR_FROM_MINNING_SHIP;
-    }
 
     @Override
     public void next(int years) {

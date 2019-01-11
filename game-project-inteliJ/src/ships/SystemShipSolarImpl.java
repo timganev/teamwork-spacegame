@@ -34,11 +34,6 @@ public class SystemShipSolarImpl extends SystemShipBase implements SystemShipSol
     }
 
     @Override
-    public void next() {
-        this.sunEnergy = this.sunEnergy + Constants.SUN_ENERGY_FOR_A_YEAR_FROM_SOLAR_SHIP;
-    }
-
-    @Override
     public void next(int years) {
         this.sunEnergy = this.sunEnergy + (Constants.SUN_ENERGY_FOR_A_YEAR_FROM_SOLAR_SHIP * years);
     }

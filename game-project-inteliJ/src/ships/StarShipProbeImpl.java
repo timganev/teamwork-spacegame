@@ -20,11 +20,6 @@ public class StarShipProbeImpl extends StarShipBase implements StarShipProbe {
         return this.darkMatter;
     }
 
-    @Override
-    public void next() {
-        this.gas = this.gas + Constants.GAS_FOR_A_YEAR_FROM_PROBE;
-        this.darkMatter = this.darkMatter + Constants.DARK_MATTER_FOR_A_YEAR_FROM_PROBE;
-    }
 
     @Override
     public void next(int years) {
