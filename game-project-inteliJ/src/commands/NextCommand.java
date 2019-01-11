@@ -110,7 +110,7 @@ public class NextCommand implements Command {
     private void Extinction() {
         int yearsBeforeAfterExtinction = GameBoard.getYearExtinctionLevelEvent() - GameBoard.getYear();
 
-        if (yearsBeforeAfterExtinction >= 0 && GameBoard.loadCounter > 0) {
+        if (yearsBeforeAfterExtinction <= 0 && GameBoard.loadCounter > 0) {
             for (SpaceObject spaceObject : engine.getSpaceObject()) {
                 if (spaceObject instanceof Planet && ((Planet) spaceObject).getObjectName().equals("Earth")) {
                     ((Planet) spaceObject).setPopulation(0);
