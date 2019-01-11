@@ -1,5 +1,6 @@
 package ships;
 
+import constants.Constants;
 import constants.GameBoard;
 import ships.shipContracts.LostShip;
 
@@ -12,7 +13,7 @@ public class LostShipImpl extends ShipBase implements LostShip {
 
     public LostShipImpl(String shipName, double shipMass) {
         super(shipName, shipMass);
-        this.yearLostShip = GameBoard.getYear();
+        this.yearLostShip = Constants.YEAR;
     }
 
     @Override
@@ -40,7 +41,7 @@ public class LostShipImpl extends ShipBase implements LostShip {
         return String.format(
                 "Ship type: %s " + System.lineSeparator() +
                         "Ship name: %s" + System.lineSeparator() +
-                        "Lost in year:  %d" + System.lineSeparator(), getType(), getShipName(),getYearLostShip());
+                        "Lost in YEAR:  %d" + System.lineSeparator(), getType(), getShipName(),getYearLostShip());
     }
 
     @Override

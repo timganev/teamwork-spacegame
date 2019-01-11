@@ -1,5 +1,6 @@
 package core;
 
+import constants.Constants;
 import constants.GameBoard;
 import ships.shipContracts.Ship;
 import spaceObjects.contracts.SpaceObject;
@@ -46,7 +47,7 @@ public class EngineImpl implements Engine {
         while (true) {
             try {
                 String commandAsString = reader.readLine();
-                if (commandAsString.equalsIgnoreCase(TERMINATION_COMMAND) || GameBoard.getYear()>= GameBoard.getYearEndGame()) {
+                if (commandAsString.equalsIgnoreCase(TERMINATION_COMMAND) || Constants.YEAR >= Constants.YEAR_END_GAME) {
                     System.out.println("The end");
                     break;
                 }

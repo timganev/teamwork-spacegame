@@ -2,16 +2,7 @@ package constants;
 
 
 public class GameBoard {
-    public static int loadCounter = 0;
-    public static int year = 2020;
-    public static int yearColonialShipCapability = 2040;
-    public static int yearExtinctionLevelEvent = 2100;
-    public static int yearEndGame = 2500;
 
-
-    //    public static int yearNukesDriveCapability = 2020;
-    //    public static int yearFusionDriveCapability = 2020;
-    //    public static int yearAntimeterDriveCapability = 2020;
 
 
     public static String spacegame =
@@ -50,24 +41,5 @@ public class GameBoard {
                     "......    .@&&%&%&@&...,,,...*#&%................,,,,,**,,,,,,,,,***,,,,,*******,,,,. .,*********///////////////*/////***,*,. ....,,*****/" + System.lineSeparator() +
                     System.lineSeparator() + "Write \"help\" to see all commands" + System.lineSeparator();
 
-
-    public static int getYear() {
-        return year;
-    }
-    public static void updateYear() {
-        year++;
-    }
-
-    public static int getYearExtinctionLevelEvent() {
-        return yearExtinctionLevelEvent;
-    }
-
-    public static int getYearEndGame() {
-        return yearEndGame;
-    }
-
-    private void setYear(int year) {
-        this.year = year;
-    }
 
 }
