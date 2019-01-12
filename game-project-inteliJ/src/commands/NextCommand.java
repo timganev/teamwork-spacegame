@@ -47,12 +47,11 @@ public class NextCommand implements Command {
         Constants.YEAR += this.jumpYears;
 
 
-
         updateTurnsToDestination();
 
-        updateSpaceObjects();
-
         extinction();
+
+        updateSpaceObjects();
 
         updateResource();
 
@@ -80,7 +79,7 @@ public class NextCommand implements Command {
     private void arriveAtDestination(Ship ship) {
         String shipname = ship.getShipName();
         int shipId = engine.getShip().indexOf(ship);
-        int destination =  ship.getDestination();
+        int destination = ship.getDestination();
         String destinationName = engine.getSpaceObject().get(destination).getObjectName();
 
         if (ship instanceof StarShipColonial) {
@@ -138,7 +137,7 @@ public class NextCommand implements Command {
         String BeforeAfterExtinction = yearsBeforeAfterExtinction > 0 ? "before" : "after";
         yearsBeforeAfterExtinction = Math.abs(yearsBeforeAfterExtinction);
         String singleOrPlural = yearsBeforeAfterExtinction <= 1 ? "%d year " : "%d years ";
-        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " extinction Level Event"), yearsBeforeAfterExtinction);
+        String numberOfyearsBeforeAfter = yearsBeforeAfterExtinction == 0 ? "Extinction Level Event" : String.format((singleOrPlural + BeforeAfterExtinction + " Extinction Level Event"), yearsBeforeAfterExtinction);
 
         return String.format(
                 "Year: %d" + System.lineSeparator() +
