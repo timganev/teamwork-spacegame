@@ -1,43 +1,22 @@
-Vehicle with ID 0 was created.
-Vehicle with ID 1 was created.
-Vehicle with ID 2 was created.
-Bus ----
-Passenger capacity: 10
-Price per kilometer: 0.70
-Vehicle type: Land
-####################
-Airplane ----
-Passenger capacity: 230
-Price per kilometer: 1.00
-Vehicle type: Air
-Has free food: true
-####################
-Train ----
-Passenger capacity: 80
-Price per kilometer: 0.44
-Vehicle type: Land
-Carts amount: 3
-Journey with ID 0 was created.
-Journey with ID 1 was created.
-Journey ----
-Start location: Sofia
-Destination: Turnovo
-Distance: 300
-Vehicle type: Land
-Travel costs: 210.00
-####################
-Journey ----
-Start location: Sofia
-Destination: Turnovo
-Distance: 33
-Vehicle type: Air
-Travel costs: 33.00
-Ticket with ID 0 was created.
-Ticket with ID 1 was created.
-Ticket ----
-Destination: Turnovo
-Price: 6342.00
-####################
-Ticket ----
-Destination: Turnovo
-Price: 3300.00
+List of commands :
+1  next
+2  load
+3  listobjects
+4  listships
+5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 4 true true
+6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
+7  createcolonialship       example: createcolonialship Sail Ark 3000 100000
+8  createstarshiprobe       example: createstarshiprobe Sail Dominator 100000
+9  createsystemshipguardian example: createsystemshipguardian Rocket 75000 true
+10 createsystemshipminning  example: createsystemshipminning Apolo11 75000 true
+11 createsystemshipsolar    example: createsystemshipsolar Apolo9 75000 true
+12 send                     example: send 0 3
+13 lostship                 example: lostship 1
+14 listactiveships
+15 listlostships
+16 listplanets
+17 listcolonial
+18 exit
+******************************************************************************
+
+The end

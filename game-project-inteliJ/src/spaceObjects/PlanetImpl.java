@@ -80,7 +80,7 @@ public class PlanetImpl extends SpaceObjectBase implements Planet {
         sb.append(String.format(
                         "Planet mass: %.4fx10^24 kg" + System.lineSeparator() +
                         "Planet radius: %.2f km" + System.lineSeparator() +
-                        "Тemperature of the planet %.2fC: " + System.lineSeparator() +
+                        "Тemperature of the planet: %.2fC" + System.lineSeparator() +
                         "The days in one YEAR: %.2f" + System.lineSeparator() +
                         "Population: %d" + System.lineSeparator() +
                         "********************",

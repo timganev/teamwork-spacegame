@@ -42,7 +42,7 @@ public class CreateColonialShipCommand implements Command {
                 engine.getShip().add(ship);
                 return String.format("ColonialShip with ID %d was created.", engine.getShip().size());
             } else {
-                return String.format("Can not created ColonialShip before develop  Colonial Ship Capability in YEAR %d.", Constants.YEAR_COLONIAL_SHIP_CAPABILITY);
+                return String.format("Can not created ColonialShip before develop Colonial Ship Capability in YEAR %d.", Constants.YEAR_COLONIAL_SHIP_CAPABILITY);
             }
         } else {
             return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);

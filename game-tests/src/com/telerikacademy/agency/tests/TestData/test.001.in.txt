@@ -1,2 +1,4 @@
 load
+send 1 3
+next 40
 exit

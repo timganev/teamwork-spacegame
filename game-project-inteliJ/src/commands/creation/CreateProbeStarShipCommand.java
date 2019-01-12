@@ -30,15 +30,15 @@ public class CreateProbeStarShipCommand implements Command {
 
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse StarShipProbe command parameters.");
+            throw new IllegalArgumentException("Failed to parse StarShipProbe command parameters."+System.lineSeparator());
         }
 
         if ( Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
             Ship ship = factory.createStarShipProbe(propulsion, shipName, shipMass);
             engine.getShip().add(ship);
-            return String.format("StarShipProbe with ID %d was created.", engine.getShip().size());
+            return String.format("StarShipProbe with ID %d was created."+System.lineSeparator(), engine.getShip().size());
         } else {
-            return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
+            return String.format("Can not created new ships after Extinction Level Event in YEAR %d."+System.lineSeparator(), Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
 
     }

@@ -1,2 +1,3 @@
-A train cannot have less than 1 cart or more than 15 carts.
-A train cannot have less than 1 cart or more than 15 carts.
+Ship name should be more than 2 and less than 15
+Ship mass should be more than 5000,00
+The end

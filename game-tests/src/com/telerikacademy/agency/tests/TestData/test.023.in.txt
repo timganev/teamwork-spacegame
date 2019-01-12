@@ -1,7 +1,5 @@
-createbus 10 0.7
-listvehicles
-createjourney Sofia vTurnovo 300 0
-listjourneys
-createticket 0 30
-listtickets
+createasteroidfield AlfaB Alfa blue 4 true true
+createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
+listobjects
+listships
 exit

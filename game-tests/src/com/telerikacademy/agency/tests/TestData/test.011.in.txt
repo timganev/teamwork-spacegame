@@ -1,4 +1,3 @@
-createairplane 250 1 true
-createairplane 250 1 false
-createairplane 250 1 pesho
+createcolonialship Sail Ark 3000 100000
+listcolonial
 exit

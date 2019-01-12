@@ -1,2 +1,2 @@
-createairplane 250 1 true
+createstarshiprobe Sail Dominator 100
 exit

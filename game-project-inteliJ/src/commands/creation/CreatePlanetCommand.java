@@ -45,7 +45,7 @@ public class CreatePlanetCommand implements Command {
         engine.getSpaceObject().add(planet);
 
 
-        return String.format("Planet with ID %d was created.", engine.getSpaceObject().size());
+        return String.format("Planet with ID %d was created."+System.lineSeparator(), engine.getSpaceObject().size());
     }
 
 }

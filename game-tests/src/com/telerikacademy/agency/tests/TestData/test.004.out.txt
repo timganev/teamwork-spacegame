@@ -1,1 +1,12 @@
-Vehicle with ID 0 was created.
+AsteroidField with ID 1 was created.
+
+Object ID: 0
+Asteroid Field :
+Name: AlfaB
+Host Star Name: Alfa
+Host Star type: Blue
+Distance: 4,00 light-years from Earth
+Detected metals: true
+Detected rare earth minerals: true
+********************
+The end

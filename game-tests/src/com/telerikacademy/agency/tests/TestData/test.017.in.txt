@@ -1,4 +1,2 @@
-createtrain 80 0.4 3
-createjourney Sofia Turnovo 400 0
-createticket 0 100
+listobjects
 exit

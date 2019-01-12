@@ -3,8 +3,10 @@ package ships;
 import constants.Constants;
 import ships.shipContracts.Ship;
 
+import static constants.Constants.MIN_SHIP_MASS;
+
 public abstract class ShipBase implements Ship {
-    private static int shipId = 0;
+    public static final String SHIP_MASS_ERROR_MASSAGE = String.format("Ship mass should be more than %.2f", MIN_SHIP_MASS);
     protected String shipName;
     protected double shipMass;
     private int turnsToDestination;
@@ -52,8 +54,8 @@ public abstract class ShipBase implements Ship {
     }
 
     public void setShipMass(double shipMass) {
-            if (shipMass < Constants.MIN_SHIP_MASS) {
-                throw new IllegalArgumentException("Ship mass should be more than 5000");
+            if (shipMass < MIN_SHIP_MASS) {
+                throw new IllegalArgumentException(SHIP_MASS_ERROR_MASSAGE);
             }
             this.shipMass = shipMass;
     }
@@ -64,9 +66,9 @@ public abstract class ShipBase implements Ship {
     @Override
     public String toString() {
         return String.format(
-                "Ship type: %s " + System.lineSeparator() +
+                "Ship type: %s" + System.lineSeparator() +
                         "Ship name: %s" + System.lineSeparator() +
-                        "Ship mass: %.2f " + System.lineSeparator() +
+                        "Ship mass: %.2f" + System.lineSeparator() +
                         "Years to destination %d" + System.lineSeparator() +
                         "Destination ID %d" + System.lineSeparator(),
                 getType(), getShipName(), getShipMass(), getTurnsToDestination(), getDestination()

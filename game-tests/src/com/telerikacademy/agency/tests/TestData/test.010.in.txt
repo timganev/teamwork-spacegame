@@ -1,3 +1,9 @@
-createairplane 250 0.08 true
-createairplane 250 2.7 true
+createsystemshipsolar Apolo9 75000 true
+createsystemshipsolar Apolo9 1 true
+createsystemshipsolar A 75000 true
+createsystemshipguardian Rocket 75000 true
+createsystemshipguardian Rocket 7 true
+createsystemshipguardian R 75000 true
+next 20
+listships
 exit

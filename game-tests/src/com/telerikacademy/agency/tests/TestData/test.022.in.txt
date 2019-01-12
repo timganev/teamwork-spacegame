@@ -1,7 +1,3 @@
-createbus 10 0.7
-createairplane 250 1 true
-createtrain 80 0.40 3
-listvehicles
-createjourney Sofia Turnovo 400 1
-listjourneys
+createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
+listplanets
 exit

@@ -1,12 +1,19 @@
-Year: 2021
-79 years before extinction Level Event
-Known Space Objects   : 0
-Colonized planets     : 0
-Total Population      : 0
-**************************
-Total number of ships : 0
-   Active ships       : 0
-   Lost ships         : 0
-**************************
+AsteroidField with ID 1 was created.
 
+Planet with ID 2 was created.
+
+ColonialShip with ID 1 was created.
+StarShipProbe with ID 2 was created.
+
+Guardian ship with ID 3 was created.
+Minning ship with ID 4 was created.
+Solar ship with ID 5 was created.
+
+Ship type: Colonial ship
+Ship name: Ark
+Ship mass: 100000,00
+Years to destination 0
+Destination ID 0
+Ship propulsion: Sail
+With crew number: 3000
 The end

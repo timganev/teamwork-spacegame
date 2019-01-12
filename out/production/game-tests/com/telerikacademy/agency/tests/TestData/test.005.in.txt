@@ -1,3 +1,16 @@
-createtrain 28 0.4 3
-createtrain 152 0.4 3
+createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
+createasteroidfield AlfaB Alfa blue 4 true true
+createstarshiprobe Sail Dominator 100000
+createstarshiprobe Sail Finder 100000
+send 1 0
+send 2 1
+createplanet AlfaB Alfa b 1.1 0.9 5 100 4
+createasteroidfield A Alfa blue 4 true true
+createplanet AlfaB A blue 1.1 0.9 5 100 4
+createasteroidfield AlfaB4444444444444444444444444444444444rrrrrrrrrrrrrrrrr4444 Alfa blue 4 true true
+createplanet AlfaB Alfarrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr blue 1.1 0.9 5 100 4
+createasteroidfield AlfaB Alfa blue 4 true true
+createplanet AlfaB Alfa blue 101 0.9 5 100 4
+createplanet AlfaB Alfa blue 1 100 5 100 4
+createplanet AlfaB Alfa blue 1 0.9 5555 100 4
 exit

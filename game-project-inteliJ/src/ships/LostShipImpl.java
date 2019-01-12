@@ -39,7 +39,7 @@ public class LostShipImpl extends ShipBase implements LostShip {
     @Override
     public String toString() {
         return String.format(
-                "Ship type: %s " + System.lineSeparator() +
+                "Ship type: %s" + System.lineSeparator() +
                         "Ship name: %s" + System.lineSeparator() +
                         "Lost in YEAR:  %d" + System.lineSeparator(), getType(), getShipName(),getYearLostShip());
     }

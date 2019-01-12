@@ -1,3 +1,5 @@
-createtrain 80 0.08 3
-createtrain 80 2.7 3
+createstarshiprobe Sail Dominator 100000
+listships
+lostship 1
+listlostships
 exit

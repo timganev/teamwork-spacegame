@@ -1,2 +1,8 @@
 StarShipProbe with ID 1 was created.
+
+Ship mass should be more than 5000,00
+Ship name should be more than 2 and less than 15
+Invalid propulsion type: S
+Failed to parse StarShipProbe command parameters.
+
 The end

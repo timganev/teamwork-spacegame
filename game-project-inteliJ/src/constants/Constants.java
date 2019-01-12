@@ -20,7 +20,6 @@ public final class Constants {
     public static final double SOLAR_POPULATION_GROW_RATE = 0.01;
 
 
-
     // Engines speed
     public static final double SPEED_OF_SAIL_ENGINE_FRACTION_OF_LIGHT_SPEED = 0.1;
     public static final double SPEED_OF_NUKES_ENGINE_FRACTION_OF_LIGHT_SPEED = 0.15;

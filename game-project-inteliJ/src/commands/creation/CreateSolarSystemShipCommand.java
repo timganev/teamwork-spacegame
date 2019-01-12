@@ -31,16 +31,16 @@ public class CreateSolarSystemShipCommand implements Command {
 
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse SolarShip command parameters.");
+            throw new IllegalArgumentException("Failed to parse SolarShip command parameters."+System.lineSeparator());
         }
 
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
             Ship ship = factory.createSystemShipSolar(shipName, shipMass, crew);
             engine.getShip().add(ship);
 
-            return String.format("Solar ship with ID %d was created.", engine.getShip().size());
+            return String.format("Solar ship with ID %d was created."+System.lineSeparator(), engine.getShip().size());
         } else {
-            return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
+            return String.format("Can not created new ships after Extinction Level Event in YEAR %d."+System.lineSeparator(), Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
 
     }
