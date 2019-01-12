@@ -2,7 +2,6 @@ package commands.creation;
 
 import commands.contracts.Command;
 import constants.Constants;
-import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
@@ -43,7 +42,6 @@ public class CreateSolarSystemShipCommand implements Command {
         } else {
             return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
-
 
     }
 

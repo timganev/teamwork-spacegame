@@ -18,7 +18,6 @@ public final class Constants {
     public static final double MAX_TEMPERATURE_FOR_LIFE = 60;
     public static final double BASE_POPULATION_GROW_RATE = 0.01;
     public static final double SOLAR_POPULATION_GROW_RATE = 0.01;
-    public static final double MINER_POPULATION_GROW_RATE = 0.01;
 
 
 

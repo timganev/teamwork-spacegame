@@ -81,7 +81,7 @@ public class CommandParser implements Parser {
                 return new CreateUniverseCommand(factory, engine);
 
             case "lostship":
-                return new LostShipCommand(factory, engine);
+                return new LostAndRefactorShipCommand(factory, engine);
 
             case "listlostships":
                 return new ListLostShipsCommand(factory, engine);

@@ -1,7 +1,5 @@
 package ships;
 
-import commands.creation.LostShipCommand;
-import commands.listing.ListLostShipsCommand;
 import constants.Constants;
 import ships.shipContracts.Ship;
 

@@ -8,13 +8,16 @@ import ships.shipContracts.Ship;
 import ships.shipContracts.StarShipColonial;
 import spaceObjects.contracts.Planet;
 
+import static constants.Constants.SOLAR_POPULATION_GROW_RATE;
+
 import java.util.List;
 
-public class LostShipCommand implements Command {
+
+public class LostAndRefactorShipCommand implements Command {
     private final Factory factory;
     private final Engine engine;
 
-    public LostShipCommand(Factory factory, Engine engine) {
+    public LostAndRefactorShipCommand(Factory factory, Engine engine) {
         this.factory = factory;
         this.engine = engine;
     }
@@ -58,6 +61,9 @@ public class LostShipCommand implements Command {
             engine.getShip().set(shipId, ship);
         } else {
             if (engine.getSpaceObject().get(destination) instanceof Planet) {
+                double populationGrowRate = ((Planet) engine.getSpaceObject().get(destination)).getPopulationGrowRate();
+                ((Planet) engine.getSpaceObject().get(destination)).setPopulationGrowRate( populationGrowRate + SOLAR_POPULATION_GROW_RATE);
+
                 Ship ship = factory.createSystemShipSolar(shipName, shipMass, false);
                 engine.getShip().set(shipId, ship);
             } else {
@@ -65,7 +71,6 @@ public class LostShipCommand implements Command {
                 engine.getShip().set(shipId, ship);
             }
         }
-
 
     }
 

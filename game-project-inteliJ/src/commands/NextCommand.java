@@ -1,8 +1,7 @@
 package commands;
 
 import commands.contracts.Command;
-import commands.creation.LostShipCommand;
-import constants.Constants;
+import commands.creation.LostAndRefactorShipCommand;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.ShipBase;
@@ -91,10 +90,10 @@ public class NextCommand implements Command {
 
             System.out.println(String.format("%s build new colony at %s" + System.lineSeparator(), shipname, destinationName));
             ((Planet) engine.getSpaceObject().get(destination)).setPopulation(population);
-            new LostShipCommand(factory, engine).executeCall(shipId, destination);
+            new LostAndRefactorShipCommand(factory, engine).executeCall(shipId, destination);
         } else {
             System.out.println(String.format("%s Probe arrived at %s" + System.lineSeparator(), shipname, destinationName));
-            new LostShipCommand(factory, engine).executeCall(shipId, destination);
+            new LostAndRefactorShipCommand(factory, engine).executeCall(shipId, destination);
         }
     }
 
