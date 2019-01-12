@@ -2,7 +2,7 @@
 
 
 
-[OOP Teamwork Assignment](https://gitlab.com/Angerfist/teamwork-spacegame/blob/master/game-project-inteliJ/Space%20OOP%20Teamwork%20Assignment.docx)
+[OOP Teamwork Assignment](https://gitlab.com/Angerfist/teamwork-spacegame/blob/master/Space%20OOP%20Teamwork%20Assignment.docx)
 
 [Trello](https://trello.com/b/nmXMBkkk/oop-timniki)
 
@@ -27,9 +27,9 @@ List of commands :
 
 4  listships
 
-5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 11 true true
+5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 4 true true
 
-6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 11 1115555
+6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
 
 7  createcolonialship       example: createcolonialship Sail Ark 3000 100000
 
@@ -41,15 +41,19 @@ List of commands :
 
 11 createsystemshipsolar    example: createsystemshipsolar Apolo9 75000 true
 
-11 send                     example: send 0 3
+12 send                     example: send 0 3
 
-11 lostship                 example: lostship 1
+13 lostship                 example: lostship 1
 
-12 listactiveships
+14 listactiveships
 
-13 listlostships
+15 listlostships
 
-14 exit
+16 listplanets
+
+17 listcolonial
+
+18 exit
 
 ******************************************************************************
 
