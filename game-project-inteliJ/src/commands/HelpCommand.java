@@ -31,9 +31,9 @@ public class HelpCommand implements Command {
                         System.lineSeparator() +
                         "4  listships" +
                         System.lineSeparator() +
-                        "5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 11 true true" +
+                        "5  createasteroidfield      example: createasteroidfield AlfaB Alfa blue 4 true true" +
                         System.lineSeparator() +
-                        "6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 11 1115555" +
+                        "6  createplanet             example: createplanet AlfaB Alfa blue 1.1 0.9 5 100 4" +
                         System.lineSeparator() +
                         "7  createcolonialship       example: createcolonialship Sail Ark 3000 100000" +
                         System.lineSeparator() +

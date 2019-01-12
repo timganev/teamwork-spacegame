@@ -12,6 +12,10 @@ public interface Planet extends SpaceObject {
 
     long getPopulation();
 
+    double getPopulationGrowRate();
+
+    void setPopulationGrowRate(double populationGrowRate);
+
     void setPopulation(long population);
 
 }

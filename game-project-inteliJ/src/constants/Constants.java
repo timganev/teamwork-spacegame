@@ -2,13 +2,25 @@ package constants;
 
 public final class Constants {
 
+    //Space Objects Constants
+    public static final int MIN_STAR_NAME_LENGTH = 3;
+    public static final int MAX_STAR_NAME_LENGTH = 20;
+    public static final int MIN_OBJECT_NAME_LENGTH = 3;
+    public static final int MAX_OBJECT_NAME_LENGTH = 20;
+
     //Planet Constants
-    public static final int MAX_FRACTION_OF_EARTH_MASS = 5;
+    public static final double MIN_PERIOD = 1;
+    public static final double MAX_FRACTION_OF_EARTH_MASS = 5;
     public static final double EARTH_MASS = 5.9736;
-    public static final int MAX_FRACTION_OF_EARTH_RADIUS = 10;
+    public static final double MAX_FRACTION_OF_EARTH_RADIUS = 10;
     public static final double EARTH_RADIUS = 6378.135;
     public static final double MIN_TEMPERATURE_FOR_LIFE = -100;
     public static final double MAX_TEMPERATURE_FOR_LIFE = 60;
+    public static final double BASE_POPULATION_GROW_RATE = 0.01;
+    public static final double SOLAR_POPULATION_GROW_RATE = 0.01;
+    public static final double MINER_POPULATION_GROW_RATE = 0.01;
+
+
 
     // Engines speed
     public static final double SPEED_OF_SAIL_ENGINE_FRACTION_OF_LIGHT_SPEED = 0.1;

@@ -14,6 +14,10 @@ import spaceObjects.contracts.SpaceObject;
 
 import java.util.List;
 
+import static constants.Constants.LOADCOUNTER;
+import static constants.Constants.YEAR;
+import static constants.Constants.YEAR_EXTINCTION_LEVEL_EVENT;
+
 
 public class NextCommand implements Command {
     private final Factory factory;
@@ -44,7 +48,7 @@ public class NextCommand implements Command {
             jumpYears = 1;
         }
 
-        Constants.YEAR += this.jumpYears;
+        YEAR += this.jumpYears;
 
 
         updateTurnsToDestination();
@@ -98,8 +102,13 @@ public class NextCommand implements Command {
 
         for (SpaceObject spaceObject : engine.getSpaceObject()) {
             if (spaceObject instanceof Planet) {
-                totalPopulation = totalPopulation + ((Planet) spaceObject).getPopulation();
-                if (((Planet) spaceObject).getPopulation() > 0) {
+
+                double growRate = (((Planet) spaceObject).getPopulationGrowRate());
+                long population = ((Planet) spaceObject).getPopulation();
+
+                ((Planet) spaceObject).setPopulation((long) (population * (1 + growRate*jumpYears)));
+                totalPopulation += population;
+                if (population > 0) {
                     colonizedPlanets++;
                 }
             }
@@ -117,11 +126,10 @@ public class NextCommand implements Command {
     }
 
     private void extinction() {
-        int yearsBeforeAfterExtinction = Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR;
-
-        if (yearsBeforeAfterExtinction <= 0 && Constants.LOADCOUNTER > 0) {
+        int yearsBeforeAfterExtinction = YEAR_EXTINCTION_LEVEL_EVENT - YEAR;
+        if (yearsBeforeAfterExtinction <= 0 && LOADCOUNTER > 0) {
             for (SpaceObject spaceObject : engine.getSpaceObject()) {
-                if (spaceObject instanceof Planet && ((Planet) spaceObject).getObjectName().equals("Earth")) {
+                if (spaceObject instanceof Planet && (spaceObject).getObjectName().equals("Earth")) {
                     ((Planet) spaceObject).setPopulation(0);
                 }
             }
@@ -129,7 +137,7 @@ public class NextCommand implements Command {
     }
 
     private String printReport() {
-        int yearsBeforeAfterExtinction = Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR;
+        int yearsBeforeAfterExtinction = YEAR_EXTINCTION_LEVEL_EVENT - YEAR;
 
         int totalShips = engine.getShip().size();
         int activeShips = totalShips - lostShips();
@@ -150,7 +158,7 @@ public class NextCommand implements Command {
                         "   Active ships       : %d" + System.lineSeparator() +
                         "   Lost ships         : %d" + System.lineSeparator() +
                         "**************************" + System.lineSeparator(),
-                Constants.YEAR, engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
+                YEAR, engine.getSpaceObject().size(), colonizedPlanets, totalPopulation, totalShips, activeShips, lostShips());
     }
 
 

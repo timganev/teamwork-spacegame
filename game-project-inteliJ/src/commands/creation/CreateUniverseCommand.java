@@ -40,9 +40,12 @@ public class CreateUniverseCommand implements Command {
             engine.getSpaceObject().add(alfab);
             engine.getSpaceObject().add(solBelt);
             engine.getSpaceObject().add(alfaBelt);
-            if (engine.getSpaceObject().get(0) instanceof Planet) {
-                ((Planet) engine.getSpaceObject().get(engine.getSpaceObject().indexOf(earth) )).setPopulation(600000000);
-            }
+
+            earth.setPopulation(6000000000L);
+            earth.setPopulationGrowRate(0);
+//            if (engine.getSpaceObject().get(0) instanceof Planet) {
+//                ((Planet) engine.getSpaceObject().get(engine.getSpaceObject().indexOf(earth) )).setPopulation(6000000000L);
+//            }
 
 
             return String.format("Known universe was loaded."+System.lineSeparator());
