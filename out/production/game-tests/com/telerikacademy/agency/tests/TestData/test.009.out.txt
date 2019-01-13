@@ -1,2 +1,6 @@
-A vehicle with less than 1 passengers or more than 800 passengers cannot exist!
-A vehicle with less than 1 passengers or more than 800 passengers cannot exist!
+ColonialShip with ID 1 was created.
+Ship mass should be more than 5000,00
+Crew should be min 1000
+Ship name should be more than 2 and less than 15
+Invalid propulsion type: S
+The end

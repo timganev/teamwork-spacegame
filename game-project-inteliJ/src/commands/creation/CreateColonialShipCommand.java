@@ -9,6 +9,10 @@ import ships.shipContracts.Ship;
 
 import java.util.List;
 
+import static constants.Constants.COLONIAL_SHIP_COUNT_DOWN;
+import static constants.Constants.COLONIAL_SHIP_COUNT_UP;
+import static constants.Constants.YEAR_COLONIAL_SHIP_CAPABILITY;
+
 public class CreateColonialShipCommand implements Command {
     private final Factory factory;
     private final Engine engine;
@@ -33,19 +37,21 @@ public class CreateColonialShipCommand implements Command {
 
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse ColonialShip command parameters.");
+            throw new IllegalArgumentException("Failed to parse ColonialShip command parameters."+ System.lineSeparator());
         }
 
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
-            if (Constants.YEAR >= Constants.YEAR_COLONIAL_SHIP_CAPABILITY) {
+            if (Constants.YEAR >= YEAR_COLONIAL_SHIP_CAPABILITY && COLONIAL_SHIP_COUNT_DOWN > 0) {
+                COLONIAL_SHIP_COUNT_DOWN--;
+                COLONIAL_SHIP_COUNT_UP++;
                 Ship ship = factory.createColonialShip(propulsion, shipName, crew, shipMass);
                 engine.getShip().add(ship);
-                return String.format("ColonialShip with ID %d was created.", engine.getShip().size());
+                return String.format("ColonialShip with ID %d was created. Humanity has resources for another %d"+ System.lineSeparator(), engine.getShip().size(), COLONIAL_SHIP_COUNT_DOWN);
             } else {
-                return String.format("Can not created ColonialShip before develop Colonial Ship Capability in YEAR %d.", Constants.YEAR_COLONIAL_SHIP_CAPABILITY);
+                return String.format("Can not created ColonialShip before develop Colonial Ship Capability in YEAR %d or more then %d Colonial Ships"+ System.lineSeparator(), YEAR_COLONIAL_SHIP_CAPABILITY, COLONIAL_SHIP_COUNT_UP+COLONIAL_SHIP_COUNT_DOWN);
             }
         } else {
-            return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
+            return String.format("Can not created new ships after Extinction Level Event in YEAR %d."+ System.lineSeparator(), Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }
 
     }

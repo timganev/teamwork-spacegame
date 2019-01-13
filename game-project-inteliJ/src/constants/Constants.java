@@ -32,6 +32,9 @@ public final class Constants {
     public static final double MAX_SHIP_NAME_LENGTH = 15;
     public static final int MAX_CREW_FOR_GUARDIAN_SHIP_WITH_LASERS = 10;
     public static final double MIN_SHIP_MASS = 5000;
+    public static int YEAR_COLONIAL_SHIP_CAPABILITY = 2040;
+    public static int COLONIAL_SHIP_COUNT_DOWN = 10;
+    public static int COLONIAL_SHIP_COUNT_UP = 0;
 
     //Resources
     public static final int MIN_CREW_OF_COLONIAL_SHIP = 1000;
@@ -40,10 +43,9 @@ public final class Constants {
     public static final double IRON_FOR_A_YEAR_FROM_MINNING_SHIP = 5000;
     public static final double MINERALS_FOR_A_YEAR_FROM_MINNING_SHIP = 2000;
     public static final double SUN_ENERGY_FOR_A_YEAR_FROM_SOLAR_SHIP = 100000;
-
     public static final int YEAR_END_GAME = 2500;
     public static final int YEAR_EXTINCTION_LEVEL_EVENT = 2100;
-    public static int YEAR_COLONIAL_SHIP_CAPABILITY = 2040;
+
     public static int YEAR = 2020;
     public static int LOADCOUNTER = 0;
 

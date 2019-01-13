@@ -1,5 +1,2 @@
-createbus 10 0.7
-createairplane 250 1 true
-createtrain 80 0.4 3
-listvehicles
+listcolonial
 exit

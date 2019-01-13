@@ -1,3 +1,2 @@
-Vehicle with ID 0 was created.
-The Destination's length cannot be less than 5 or more than 25 symbols long.
-The Destination's length cannot be less than 5 or more than 25 symbols long.
+period can not be less then 1,00
+The end
