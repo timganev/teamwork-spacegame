@@ -2,7 +2,8 @@ AsteroidField with ID 1 was created.
 
 Planet with ID 2 was created.
 
-ColonialShip with ID 1 was created.
+ColonialShip with ID 1 was created. Humanity has resources for another 9
+
 StarShipProbe with ID 2 was created.
 
 Guardian ship with ID 3 was created.

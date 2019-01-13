@@ -1,4 +1,5 @@
-ColonialShip with ID 1 was created.
+ColonialShip with ID 1 was created. Humanity has resources for another 2
+
 Invalid propulsion type: S
 AsteroidField with ID 1 was created.
 
