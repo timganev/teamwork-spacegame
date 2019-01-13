@@ -1,2 +1,0 @@
-Ship mass should be more than 5000,00
-The end

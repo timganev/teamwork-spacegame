@@ -1,2 +1,0 @@
-period can not be less then 1,00
-The end

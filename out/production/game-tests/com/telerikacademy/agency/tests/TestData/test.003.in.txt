@@ -1,6 +1,0 @@
-createstarshiprobe Sail Dominator 100000
-createstarshiprobe Sail Dominator 1
-createstarshiprobe Sail D 100000
-createstarshiprobe S Dominator 100000
-createstarshiprobe Saisdsd
-exit

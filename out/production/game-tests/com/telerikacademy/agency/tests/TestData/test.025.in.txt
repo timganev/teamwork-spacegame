@@ -1,6 +1,0 @@
-createcolonialship Sail Ark 3000 100000
-createcolonialship S Ark 3000 100000
-createasteroidfield AlfaB Alfa blue 4 true true
-send 1 0
-listships
-exit

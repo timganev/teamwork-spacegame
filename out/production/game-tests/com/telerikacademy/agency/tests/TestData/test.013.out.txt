@@ -1,3 +1,0 @@
-Failed to parse AsteroidField command parameters.
-
-The end

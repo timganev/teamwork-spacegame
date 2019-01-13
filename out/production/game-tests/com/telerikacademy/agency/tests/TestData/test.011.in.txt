@@ -1,3 +1,0 @@
-createcolonialship Sail Ark 3000 100000
-listcolonial
-exit

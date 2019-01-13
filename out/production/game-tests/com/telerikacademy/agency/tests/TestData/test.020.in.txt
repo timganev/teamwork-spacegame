@@ -1,2 +1,0 @@
-listlostships
-exit

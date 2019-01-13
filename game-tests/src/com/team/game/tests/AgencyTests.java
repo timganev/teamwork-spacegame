@@ -1,4 +1,4 @@
-package com.telerikacademy.agency.tests;
+package com.team.game.tests;
 
 
 import core.EngineImpl;
@@ -145,7 +145,7 @@ public class AgencyTests {
     }
 
     private void executeIOTest(String testNumber) throws Exception {
-        String testInputFilePath = "./src/com/telerikacademy/agency/tests/TestData/test." + testNumber + ".in.txt";
+        String testInputFilePath = "./src/com/team/game/tests/TestData/test." + testNumber + ".in.txt";
         InputStream testInput = new FileInputStream(testInputFilePath);
         System.setIn(testInput);
 
@@ -157,11 +157,11 @@ public class AgencyTests {
         Engine engine = new EngineImpl(factory);
         engine.start();
 
-        String testOutputFilePath = "./src/com/telerikacademy/agency/tests/TestData/test." + testNumber + ".out.txt";
+        String testOutputFilePath = "./src/com/team/game/tests/TestData/test." + testNumber + ".out.txt";
         byte[] testOutputData = Files.readAllBytes(Paths.get(testOutputFilePath));
         String expected = new String(testOutputData, StandardCharsets.UTF_8);
-        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8);
-//        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8).replaceAll("\r", ""); //.replaceAll(",", "."); // .replaceAll("\r", "");
+//        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8);
+        String actual = new String(outputByteStream.toByteArray(), StandardCharsets.UTF_8).replaceAll("\r", ""); //.replaceAll(",", "."); // .replaceAll("\r", "");
 
         Assert.assertEquals(expected.trim(), actual.trim());
     }

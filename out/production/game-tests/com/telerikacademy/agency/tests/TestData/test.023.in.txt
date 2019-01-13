@@ -1,5 +1,0 @@
-createasteroidfield AlfaB Alfa blue 4 true true
-createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
-listobjects
-listships
-exit

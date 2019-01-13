@@ -1,3 +1,0 @@
-createstarshiprobe Sail D 10000
-createstarshiprobe Sail Dominator 1
-exit

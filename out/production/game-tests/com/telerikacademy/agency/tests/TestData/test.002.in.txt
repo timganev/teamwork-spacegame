@@ -1,9 +1,0 @@
-createasteroidfield AlfaB Alfa blue 4 true true
-createplanet AlfaB Alfa blue 1.1 0.9 5 100 4
-createcolonialship Sail Ark 3000 100000
-createstarshiprobe Sail Dominator 100000
-createsystemshipguardian Rocket 75000 true
-createsystemshipminning Apolo11 75000 true
-createsystemshipsolar Apolo9 75000 true
-listcolonial
-exit

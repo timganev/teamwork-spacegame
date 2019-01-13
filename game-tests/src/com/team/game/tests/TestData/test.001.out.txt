@@ -1,0 +1,48 @@
+Known universe was loaded.
+
+Can not created ColonialShip before develop Colonial Ship Capability in YEAR 2040 or more then 10 Colonial Ships
+
+StarShipProbe with ID 2 was created.
+
+Send Sail Probe ship with ID 1 to
+Asteroid Field :
+Name: alfaBelt
+Host Star Name: Alfa
+Host Star type: Blue
+Distance: 4,00 light-years from Earth
+Detected metals: true
+Detected rare earth minerals: true
+********************
+The trip will take 40 years
+
+Send Sail Probe ship with ID 2 to
+Planet
+Name: AlfaB
+Host Star Name: Alfa
+Host Star type: Blue
+Distance: 4,00 light-years from Earth
+Planet mass: 5,3762x10^24 kg
+Planet radius: 7015,95 km
+Тemperature of the planet: -25,00C
+The days in one YEAR: 101,00
+Population: 0
+********************
+The trip will take 40 years
+
+Index: 2, Size: 2
+EventHorizon Probe arrived at alfaBelt
+
+Dominator Probe arrived at AlfaB
+
+Year: 2060
+40 years before Extinction Level Event
+Known Space Objects   : 4
+Colonized planets     : 1
+Total Population      : 6000000000
+**************************
+Total number of ships : 2
+   Active ships       : 2
+   Lost ships         : 0
+**************************
+
+The end

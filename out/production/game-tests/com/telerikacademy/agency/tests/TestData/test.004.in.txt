@@ -1,3 +1,0 @@
-createasteroidfield AlfaB Alfa blue 4 true true
-listobjects
-exit
