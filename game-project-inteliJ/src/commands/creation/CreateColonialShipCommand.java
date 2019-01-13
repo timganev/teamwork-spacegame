@@ -6,12 +6,8 @@ import constants.Constants;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
-
 import java.util.List;
-
-import static constants.Constants.COLONIAL_SHIP_COUNT_DOWN;
-import static constants.Constants.COLONIAL_SHIP_COUNT_UP;
-import static constants.Constants.YEAR_COLONIAL_SHIP_CAPABILITY;
+import static constants.Constants.*;
 
 public class CreateColonialShipCommand implements Command {
     private final Factory factory;
@@ -37,7 +33,7 @@ public class CreateColonialShipCommand implements Command {
 
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse ColonialShip command parameters."+ System.lineSeparator());
+            throw new IllegalArgumentException(String.format(FAILED_TO_PARSE_MASSAGE + System.lineSeparator()));
         }
 
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {

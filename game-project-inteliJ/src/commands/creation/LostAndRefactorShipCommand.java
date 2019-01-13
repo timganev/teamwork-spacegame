@@ -7,7 +7,7 @@ import core.factories.Factory;
 import ships.shipContracts.Ship;
 import ships.shipContracts.StarShipColonial;
 import spaceObjects.contracts.Planet;
-
+import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 import static constants.Constants.SOLAR_POPULATION_GROW_RATE;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class LostAndRefactorShipCommand implements Command {
             shipId = Integer.parseInt(parameters.get(0)) - 1;
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse LostShip command parameters." + System.lineSeparator());
+            throw new IllegalArgumentException(FAILED_TO_PARSE_MASSAGE + System.lineSeparator());
         }
 
         shipName = engine.getShip().get(shipId).getShipName();

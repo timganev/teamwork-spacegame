@@ -2,12 +2,11 @@ package commands.creation;
 
 import commands.contracts.Command;
 import constants.Constants;
-import constants.GameBoard;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
-
 import java.util.List;
+import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 
 public class CreateGuardianSystemShipCommand implements Command {
     private final Factory factory;
@@ -30,9 +29,8 @@ public class CreateGuardianSystemShipCommand implements Command {
             crew = Boolean.parseBoolean(parameters.get(2));
 
 
-
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse GuardianShip command parameters.");
+            throw new IllegalArgumentException(FAILED_TO_PARSE_MASSAGE + System.lineSeparator());
         }
 
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {

@@ -5,8 +5,8 @@ import spaceObjects.contracts.AsteroidField;
 import commands.contracts.Command;
 import core.contracts.Engine;
 import core.factories.Factory;
-
 import java.util.List;
+import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 
 public class CreateAsteroidFieldCommand implements Command {
     private final Factory factory;
@@ -32,16 +32,17 @@ public class CreateAsteroidFieldCommand implements Command {
             hostStarType = parameters.get(2);
             distanceLightYears = Double.parseDouble(parameters.get(3));
             hasMetals = Boolean.parseBoolean(parameters.get(4));
-            hasRareEarthMinerals = Boolean.parseBoolean(parameters.get(5));;
+            hasRareEarthMinerals = Boolean.parseBoolean(parameters.get(5));
+            ;
 
         } catch (Exception e) {
-            throw new IllegalArgumentException("Failed to parse AsteroidField command parameters."+System.lineSeparator());
+            throw new IllegalArgumentException(FAILED_TO_PARSE_MASSAGE + System.lineSeparator());
         }
 
         AsteroidField asteroidField = factory.createAsteroidField(objectName, hostStarName, hostStarType, distanceLightYears, hasMetals, hasRareEarthMinerals);
         engine.getSpaceObject().add(asteroidField);
 
-        return String.format("AsteroidField with ID %d was created."+System.lineSeparator(), engine.getSpaceObject().size());
+        return String.format("AsteroidField with ID %d was created." + System.lineSeparator(), engine.getSpaceObject().size());
     }
 
 }

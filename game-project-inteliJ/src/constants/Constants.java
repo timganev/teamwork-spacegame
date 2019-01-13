@@ -35,6 +35,7 @@ public final class Constants {
     public static int YEAR_COLONIAL_SHIP_CAPABILITY = 2040;
     public static int COLONIAL_SHIP_COUNT_DOWN = 10;
     public static int COLONIAL_SHIP_COUNT_UP = 0;
+    public static String FAILED_TO_PARSE_MASSAGE = "Failed to parse command parameters.";
 
     //Resources
     public static final int MIN_CREW_OF_COLONIAL_SHIP = 1000;
