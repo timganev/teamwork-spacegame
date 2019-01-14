@@ -8,21 +8,13 @@ public class StarShipColonialImpl extends StarShipBase implements StarShipColoni
 
     private int crewCount;
 
-    public StarShipColonialImpl(PropulsionType propulsion, String shipName, int crewCount, double shipMass) {
+    public StarShipColonialImpl(PropulsionType propulsion, String shipName, double shipMass, int crewCount) {
         super(propulsion, shipName, shipMass);
         setCrewCount(crewCount);
     }
 
-    @Override
-    public void setShipName(String shipName) {
-
-        if (shipName == null || shipName.isEmpty() || shipName.matches("\\s+")) {
-            super.shipName = getPropulsion().toString();
-        } else if (shipName.length() < Constants.MIN_SHIP_NAME_LENGTH || shipName.length() > Constants.MAX_SHIP_NAME_LENGTH) {
-            throw new IllegalArgumentException("Ship name should be more than 2 and less than 15");
-        } else {
-            super.shipName = shipName;
-        }
+    public String getShipName() {
+        return super.shipName;
     }
 
     @Override
@@ -34,13 +26,6 @@ public class StarShipColonialImpl extends StarShipBase implements StarShipColoni
         return this.crewCount;
     }
 
-    public void setCrewCount(int crewCount) {
-        if (crewCount < Constants.MIN_CREW_OF_COLONIAL_SHIP) {
-            throw new IllegalArgumentException("Crew should be min 1000");
-        }
-        this.crewCount = crewCount;
-    }
-
     @Override
     public void next(int years) {}
 
@@ -49,6 +34,13 @@ public class StarShipColonialImpl extends StarShipBase implements StarShipColoni
         return String.format(super.toString() +
                 "With crew number: %d" + System.lineSeparator(), getCrewCount()
         );
+    }
+
+    private void setCrewCount(int crewCount) {
+        if (crewCount < Constants.MIN_CREW_OF_COLONIAL_SHIP) {
+            throw new IllegalArgumentException("Crew should be min 1000");
+        }
+        this.crewCount = crewCount;
     }
 
 }

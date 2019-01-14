@@ -1,10 +1,14 @@
 package commands.creation;
 
 
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
+import constants.Constants;
 import spaceObjects.contracts.AsteroidField;
 import commands.contracts.Command;
 import core.contracts.Engine;
 import core.factories.Factory;
+
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.List;
 import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 
@@ -17,14 +21,14 @@ public class CreateAsteroidFieldCommand implements Command {
         this.engine = engine;
     }
 
-    public String execute(List<String> parameters) {
+    public String execute(List<String> parameters){
 
         String objectName;
-        String hostStarName;
-        String hostStarType;
-        boolean hasMetals;
-        boolean hasRareEarthMinerals;
-        double distanceLightYears;
+        String hostStarName ;
+        String hostStarType ;
+        boolean hasMetals = false;
+        boolean hasRareEarthMinerals ;
+        double distanceLightYears ;
 
         try {
             objectName = parameters.get(0);
@@ -36,7 +40,7 @@ public class CreateAsteroidFieldCommand implements Command {
             ;
 
         } catch (Exception e) {
-            throw new IllegalArgumentException(FAILED_TO_PARSE_MASSAGE + System.lineSeparator());
+            throw new IllegalArgumentException(Constants.FAILED_TO_PARSE_MASSAGE);
         }
 
         AsteroidField asteroidField = factory.createAsteroidField(objectName, hostStarName, hostStarType, distanceLightYears, hasMetals, hasRareEarthMinerals);

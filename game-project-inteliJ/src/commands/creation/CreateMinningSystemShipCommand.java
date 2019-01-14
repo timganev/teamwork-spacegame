@@ -5,7 +5,9 @@ import constants.Constants;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
+
 import java.util.List;
+
 import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 
 public class CreateMinningSystemShipCommand implements Command {
@@ -37,7 +39,7 @@ public class CreateMinningSystemShipCommand implements Command {
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
             Ship ship = factory.createSystemShipMinning(shipName, shipMass, crew);
             engine.getShip().add(ship);
-            return String.format("Minning ship with ID %d was created.", engine.getShip().size());
+            return String.format("Minning ship with ID %d was created." + System.lineSeparator(), engine.getShip().size());
         } else {
             return String.format("Can not created new ships after Extinction Level Event in YEAR %d." + System.lineSeparator(), Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }

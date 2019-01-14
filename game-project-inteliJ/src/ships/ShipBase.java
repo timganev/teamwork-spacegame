@@ -1,12 +1,14 @@
 package ships;
 
-import constants.Constants;
+
 import ships.shipContracts.Ship;
 
-import static constants.Constants.MIN_SHIP_MASS;
+import static constants.Constants.*;
+
 
 public abstract class ShipBase implements Ship {
-    public static final String SHIP_MASS_ERROR_MASSAGE = String.format("Ship mass should be more than %.2f", MIN_SHIP_MASS);
+    private static final String SHIP_MASS_ERROR_MASSAGE = String.format("Ship mass should be more than %.2f", MIN_SHIP_MASS);
+    private final String SHIP_NAME_ERROR_MASSAGE = String.format("Ship name should be more than %d and less than %d",MIN_SHIP_NAME_LENGTH, MAX_SHIP_NAME_LENGTH);
     protected String shipName;
     protected double shipMass;
     private int turnsToDestination;
@@ -26,7 +28,15 @@ public abstract class ShipBase implements Ship {
         return this.shipName;
     }
 
-    public abstract void setShipName(String shipName);
+
+    public void setShipName(String shipName) {
+        if (shipName.length() < MIN_SHIP_NAME_LENGTH || shipName.length() > MAX_SHIP_NAME_LENGTH) {
+            throw new IllegalArgumentException(String.format(SHIP_NAME_ERROR_MASSAGE));
+        } else {
+            this.shipName = shipName;
+        }
+    }
+
 
     public abstract double getShipSpeed();
 
@@ -40,28 +50,19 @@ public abstract class ShipBase implements Ship {
         return turnsToDestination;
     }
 
-    public void setDestination(int destination) {
-        this.destination = destination;
-    }
-
-    public void setTurnsToDestination(int turnsToDestination) {
-        this.turnsToDestination = turnsToDestination;
-    }
-
     @Override
     public double getShipMass() {
         return this.shipMass;
     }
 
-    public void setShipMass(double shipMass) {
-            if (shipMass < MIN_SHIP_MASS) {
-                throw new IllegalArgumentException(SHIP_MASS_ERROR_MASSAGE);
-            }
-            this.shipMass = shipMass;
+    protected void setShipMass(double shipMass) {
+        if (shipMass < MIN_SHIP_MASS) {
+            throw new IllegalArgumentException(SHIP_MASS_ERROR_MASSAGE);
+        }
+        this.shipMass = shipMass;
     }
 
     public abstract String getType();
-
 
     @Override
     public String toString() {
@@ -75,6 +76,12 @@ public abstract class ShipBase implements Ship {
         );
     }
 
+    public void setDestination(int destination) {
+        this.destination = destination;
+    }
 
+    public void setTurnsToDestination(int turnsToDestination) {
+        this.turnsToDestination = turnsToDestination;
+    }
 }
 

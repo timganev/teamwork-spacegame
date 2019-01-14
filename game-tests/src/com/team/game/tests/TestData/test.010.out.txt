@@ -1,9 +1,11 @@
 Solar ship with ID 1 was created.
 
 Ship mass should be more than 5000,00
-Ship name cant be less than 2 or more than 15
+Ship name should be more than 3 and less than 15
 Guardian ship with ID 2 was created.
+
 Guardian ship with ID 3 was created.
+
 Does not exist weapon: R
 Year: 2080
 20 years before Extinction Level Event
@@ -32,7 +34,7 @@ Ship mass: 0,00
 Years to destination 0
 Destination ID 0
 Crew: Without crew
-WeaponsType:  Rockets and lasers
+Weapons: Rockets
 
 Ship ID: 3
 Ship type: Guardian ship
@@ -41,5 +43,5 @@ Ship mass: 0,00
 Years to destination 0
 Destination ID 0
 Crew: Without crew
-WeaponsType:  Rockets and lasers
+Weapons: Rockets
 The end

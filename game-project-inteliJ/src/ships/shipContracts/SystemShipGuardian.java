@@ -6,5 +6,4 @@ public interface SystemShipGuardian extends SystemShip {
 
     WeaponsType getWeapons();
 
-
 }

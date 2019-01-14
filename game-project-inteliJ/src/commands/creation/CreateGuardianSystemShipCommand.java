@@ -5,7 +5,9 @@ import constants.Constants;
 import core.contracts.Engine;
 import core.factories.Factory;
 import ships.shipContracts.Ship;
+
 import java.util.List;
+
 import static constants.Constants.FAILED_TO_PARSE_MASSAGE;
 
 public class CreateGuardianSystemShipCommand implements Command {
@@ -24,6 +26,8 @@ public class CreateGuardianSystemShipCommand implements Command {
         double shipMass;
 
         try {
+
+
             weapons = parameters.get(0);
             shipMass = Double.parseDouble(parameters.get(1));
             crew = Boolean.parseBoolean(parameters.get(2));
@@ -36,7 +40,7 @@ public class CreateGuardianSystemShipCommand implements Command {
         if (Constants.YEAR_EXTINCTION_LEVEL_EVENT - Constants.YEAR > 0) {
             Ship ship = factory.createSystemShipGuardian(weapons, crew, shipMass);
             engine.getShip().add(ship);
-            return String.format("Guardian ship with ID %d was created.", engine.getShip().size());
+            return String.format("Guardian ship with ID %d was created." + System.lineSeparator(), engine.getShip().size());
         } else {
             return String.format("Can not created new ships after Extinction Level Event in YEAR %d.", Constants.YEAR_EXTINCTION_LEVEL_EVENT);
         }

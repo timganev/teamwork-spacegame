@@ -28,8 +28,8 @@ public final class Constants {
     public static final double SPEED_OF_SYSTEM_SHIP = 28000;
 
     //Ships Constants
-    public static final double MIN_SHIP_NAME_LENGTH = 3;
-    public static final double MAX_SHIP_NAME_LENGTH = 15;
+    public static final int MIN_SHIP_NAME_LENGTH = 3;
+    public static final int MAX_SHIP_NAME_LENGTH = 15;
     public static final int MAX_CREW_FOR_GUARDIAN_SHIP_WITH_LASERS = 10;
     public static final double MIN_SHIP_MASS = 5000;
     public static int YEAR_COLONIAL_SHIP_CAPABILITY = 2040;

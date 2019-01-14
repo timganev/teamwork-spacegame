@@ -7,7 +7,9 @@ ColonialShip with ID 1 was created. Humanity has resources for another 9
 StarShipProbe with ID 2 was created.
 
 Guardian ship with ID 3 was created.
+
 Minning ship with ID 4 was created.
+
 Solar ship with ID 5 was created.
 
 Ship type: Colonial ship

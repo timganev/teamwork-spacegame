@@ -22,21 +22,25 @@ public abstract class SystemShipBase extends ShipBase implements SystemShip {
     public SystemShipBase(boolean crew, double shipMass) {
     }
 
+    public SystemShipBase() {
+    }
+
+    SystemShipBase(double shipMass, boolean crew) {
+    }
+
     @Override
     public int getCountOfCrew() {
         return this.countOfCrew;
     }
 
-    public void setCountOfCrew(int countOfCrew) {
-        if (this.crew) {
-            this.countOfCrew = countOfCrew;
+
+    public void setShipName(String shipName) {
+        if (shipName == null || shipName.isEmpty() || shipName.matches("\\s+")) {
+            super.shipName = "";
         } else {
-            throw new IllegalArgumentException("You don't have crew!");
+            super.setShipName(shipName);
         }
     }
-
-    @Override
-    public abstract void setShipName(String shipName);
 
     @Override
     public double getShipSpeed() {
@@ -67,6 +71,14 @@ public abstract class SystemShipBase extends ShipBase implements SystemShip {
         } else {
             return String.format(super.toString() +
                     "Crew: %s" + System.lineSeparator(), crewToString());
+        }
+    }
+
+    private void setCountOfCrew(int countOfCrew) {
+        if (this.crew) {
+            this.countOfCrew = countOfCrew;
+        } else {
+            throw new IllegalArgumentException("You don't have crew!");
         }
     }
 

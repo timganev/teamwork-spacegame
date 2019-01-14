@@ -19,6 +19,8 @@ public class FactoryImpl implements Factory {
 
     @Override
     public Planet createPlanet(String objectName, String hostStarName, String hostStarType, double distanceLightYears, double massEarthM, double radiusEarthR, double tempC, double periodDays) {
+
+
         return new PlanetImpl(objectName, hostStarName, getHostStarType(hostStarType), distanceLightYears, massEarthM, radiusEarthR, tempC, periodDays);
     }
 
@@ -29,7 +31,7 @@ public class FactoryImpl implements Factory {
 
     @Override
     public StarShipColonial createColonialShip(String propulsion, String shipName, int crew, double shipMass) {
-        return new StarShipColonialImpl(getPropulsionType(propulsion), shipName, crew, shipMass);
+        return new StarShipColonialImpl(getPropulsionType(propulsion), shipName, shipMass, crew);
     }
 
     public LostShip createLostShip(String shipName, double shipMass) {

@@ -7,7 +7,7 @@ import ships.shipContracts.StarShip;
 public abstract class StarShipBase extends ShipBase implements StarShip {
 
 
-    private PropulsionType propulsion;
+
 
     public StarShipBase(PropulsionType propulsion, String shipName, double shipMass) {
         super(shipName, shipMass);
@@ -17,17 +17,24 @@ public abstract class StarShipBase extends ShipBase implements StarShip {
     public StarShipBase(String shipName) {
     }
 
+    public void setShipName(String shipName) {
+
+        if (shipName == null || shipName.isEmpty() || shipName.matches("\\s+")) {
+            super.shipName = getPropulsion().toString();
+        } else {
+            super.setShipName(shipName);
+        }
+    }
+
     @Override
     public PropulsionType getPropulsion() {
         return this.propulsion;
     }
 
-    public void setPropulsion(PropulsionType propulsion) {
+    private void setPropulsion(PropulsionType propulsion) {
         this.propulsion = propulsion;
     }
 
-    @Override
-    public abstract void setShipName(String shipName);
 
     @Override
     public double getShipSpeed() {
@@ -54,4 +61,6 @@ public abstract class StarShipBase extends ShipBase implements StarShip {
                 "Ship propulsion: %s" + System.lineSeparator(), getPropulsion().toString()
         );
     }
+
+    private PropulsionType propulsion;
 }
